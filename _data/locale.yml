@@ -1,4 +1,22 @@
 # @start locale config
+LICENSE_ANNOUNCE:
+  en:      "This work is licensed under a [LICENSE] license."
+  zh:      "本文遵守 [LICENSE] 许可协议。"
+  zh-Hans: "本文遵守 [LICENSE] 许可协议。"
+  zh-Hant: "本文遵守 [LICENSE] 許可協議。"
+
+LICENSE_INTRO:
+  en:
+  zh:      "欢迎转载，转载需注明出处，且禁止用于商业目的。"
+  zh-Hans: "欢迎转载，转载需注明出处，且禁止用于商业目的。"
+  zh-Hant: "歡迎轉載，轉載需註明出處，且禁止用於商業目的。"
+
+POST_ON_GITHUB:
+  en:      "View this POST on Github."
+  zh:      "在 Github 上查阅此文。"
+  zh-Hans: "在 Github 上查阅此文。"
+  zh-Hant: "在 Github 上查閱此文。"
+  
 ## => English
 ########################
 en: &EN
@@ -45,6 +63,7 @@ zh-Hans: &ZH_HANS
   ARTICLE_LIST_DATE_FORMAT: "%m月%d日"
   STATISTICS              : "共计 [POST_COUNT] 篇文章，[PAGE_COUNT] 页。"
   LICENSE_ANNOUNCE        : "本文遵守 [LICENSE] 许可协议。"
+  LICENSE_INTRO           : "欢迎转载，转载需注明出处，且禁止用于商业目的。"
   POST_ON_GITHUB          : "在 Github 上修改"
   FOLLOW_ME               : "在 [NAME] 上关注我。"
   FOLLOW_US               : "在 [NAME] 上关注我们。"
@@ -74,6 +93,7 @@ zh-Hant: &ZH_HANT
   ARTICLE_LIST_DATE_FORMAT: "%m月%d日"
   STATISTICS              : "共計 [POST_COUNT] 篇文章，[PAGE_COUNT] 頁。"
   LICENSE_ANNOUNCE        : "本文遵守 [LICENSE] 許可協議。"
+  LICENSE_INTRO           : "歡迎轉載，轉載需註明出處，且禁止用於商業目的。"
   POST_ON_GITHUB          : "在 Github 上修改"
   FOLLOW_ME               : "在 [NAME] 上關注我。"
   FOLLOW_US               : "在 [NAME] 上關注我們。"
