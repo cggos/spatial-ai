@@ -1,22 +1,26 @@
 {%- include snippets/get-locale-string.html key='LICENSE_ANNOUNCE' -%}
 {%- assign _license_announce = __return -%}
+{%- include snippets/get-locale-string.html key='LICENSE_INTRO' -%}
+{%- assign _license_intro = __return -%}
 
 {%- if include.license -%}
 
   {%-assign _license_name = '<a itemprop="license" rel="license" href="[URL]">[NAME]</a>' | replace: "[URL]", include.license.url | replace: "[NAME]", include.license.name -%}
-  <!-- <div class="license">
+  <div class="license">
+    <p>{{ _license_intro }}</p>
     <p>{{ _license_announce | replace: "[LICENSE]", _license_name }}
       <a rel="license" href="{{ include.license.url }}">
         <img alt="{{ include.license.name }}" src="{{ include.license.image }}" />
       </a>
     </p>
-  </div> -->
-  <div class="license card">
+  </div>
+
+  <!-- <div class="license card">
     {%- assign locale = site.data.locale -%}
     <div class="clearfix">
       {%- if site.repository and site.repository_tree -%}
         {%- assign __path = '/assets/images/octocat.jpg' -%}
-        {%- include snippets/prepend-baseurl.html -%}
+        {%- assign __return = __path | replace:'index.html','' | prepend: site.baseurl | replace:'//','/' -%}
         <a class="octocat" href="https://github.com/{{ site.repository }}/tree/{{ site.repository_tree }}/{{ page.path }}">
           <img alt="View on Github" src="{{ __return }}" />
         </a>
@@ -28,7 +32,7 @@
       {%- include snippets/locale-to-string.html -%}
       <p>{{ __return | replace: "[LICENSE]", '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>' }}</p>
       {%- assign __path = '/assets/images/license-cc4.png' -%}
-      {%- include snippets/prepend-baseurl.html -%}
+      {%- assign __return = __path | replace:'index.html','' | prepend: site.baseurl | replace:'//','/' -%}
       <a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
         <img alt="Creative Commons License" src="{{ __return }}" />
       </a>
@@ -36,5 +40,6 @@
       {%- include snippets/locale-to-string.html -%}
       <p>{{ __return }}</p>
     </div>
-  </div>
+  </div> -->
+
 {%- endif -%}
