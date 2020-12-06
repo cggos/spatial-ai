@@ -9,6 +9,11 @@
 {%- assign _show_subscribe = __return -%}
 
 {%- include snippets/assign.html
+  target=site.data.variables.default.page.show_reward_pay
+  source0=layout.show_reward_pay source1=page.show_reward_pay -%}
+{%- assign _show_reward_pay = __return -%}
+
+{%- include snippets/assign.html
   target=site.data.variables.default.page.license
   source0=layout.license source1=page.license -%}
 {%- assign _license = __return -%}
@@ -26,8 +31,6 @@
   {%- elsif page.date -%}
     <meta itemprop="dateModified" content="{{ page.date | date_to_xmlschema }}">
   {%- endif -%}
-
-  {%- include article/footer/custom.html -%}
 
   {%- if _show_author_profile -%}
     {%- if page.author -%}
@@ -52,4 +55,9 @@
     {%- endif -%}
     <div class="article__license">{%- include article/footer/license.html license=_license_data -%}</div>
   {%- endif -%}
+
+  {%- if _show_reward_pay -%}
+    <div class="article__reward_pay">{%- include article/footer/reward_pay.html -%}</div>
+  {%- endif -%}
+
 </footer>
