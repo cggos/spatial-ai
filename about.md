@@ -25,3 +25,11 @@ titles:
   # @end locale config
 key: page-about
 ---
+
+Welcome! :ghost: :ghost: :ghost:
+
+Please feel free to create an issue or [send me email](mailto:cggos@outlook.com) if you have any questions.
+
+If you like the posts, don't forget to follow me. :star2:
+
+[![GitHub followers](https://img.shields.io/github/followers/cggos?label=Follow&style=social)](https://github.com/cggos)
