@@ -6,6 +6,8 @@ tags: Robotics MSF
 key: msf-eskf-imu-gps
 ---
 
+<div>{%- include extensions/youtube.html id='hN8dL55rP5I' -%}</div>
+
 [TOC]
 
 # Overview
