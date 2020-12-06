@@ -49,8 +49,5 @@ header:
       # @end locale config
     url: /about.html
 
-  - title:      GitHub
-    url:        https://github.com/cggos/cggos.github.io
-
   - title:      WebDemo
     url: /projects/homepage.html
