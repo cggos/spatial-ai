@@ -8,6 +8,8 @@ key: image-process-feature-orb
 
 [TOC]
 
+<div>{%- include extensions/slideshare.html id='6S7xPEvA9dQkJL' -%}</div>
+
 ## Overview
 
 * Oriented FAST + Rotated BRIEF
