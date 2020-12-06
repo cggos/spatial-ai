@@ -3,7 +3,7 @@ layout: article
 title: "视觉SLAM位姿优化时误差函数雅克比矩阵的计算"
 date: 2018-12-15
 tags: SLAM
-
+key: vslam-jacobian
 ---
 
 [TOC]

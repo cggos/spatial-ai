@@ -3,6 +3,7 @@ layout: article
 title:  "Computer Vision Libraries"
 date:   2017-08-24 22:03:00 +0800
 tags: ComputerVision
+key: computer-vision-libraries
 ---
 
 ### libCVD

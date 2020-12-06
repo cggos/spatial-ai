@@ -3,7 +3,7 @@ layout: article
 title:  "Camera Control"
 date:   2019-04-10
 tags: ComputerVision
-
+key: camera-ctrl
 ---
 
 [TOC]

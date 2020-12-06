@@ -3,7 +3,7 @@ layout: article
 title:  "Linux平台C++程序调试"
 date: 2018-05-01
 tags: C++
-
+key: linux-cpp-debug
 ---
 
 [TOC]

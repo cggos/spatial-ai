@@ -2,8 +2,8 @@
 layout: article
 title:  "Kalibr 之 Camera-IMU 标定 (总结)"
 date:   2018-10-23
-tags: Robotics
-
+tags: Robotics SensorCalib
+key: kalibr-camera-imu
 ---
 
 [TOC]

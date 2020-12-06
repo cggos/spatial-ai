@@ -3,7 +3,7 @@ layout: article
 title: "Ubuntu 16.04 下 VINS-Mono 的安装和使用(RealSense ZR300)"
 date: 2019-03-03
 tags: SLAM
-
+key: slam-vinsmono-zr300-run
 ---
 
 [TOC]

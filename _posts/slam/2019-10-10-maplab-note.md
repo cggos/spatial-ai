@@ -3,7 +3,7 @@ layout: article
 title: "Maplab 学习笔记"
 date: 2019-10-10
 tags: SLAM
-
+key: slam-maplab-note
 ---
 
 [TOC]
@@ -12,19 +12,23 @@ tags: SLAM
 
 * [ethz-asl/maplab](https://github.com/ethz-asl/maplab/): An open visual-inertial mapping framework.
 
-
 ## Maplab Framework
 
-![](https://cloud.githubusercontent.com/assets/966785/6546069/2a4ce0b2-c5a4-11e4-8613-ddcf5e8b0591.png)
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/966785/6546069/2a4ce0b2-c5a4-11e4-8613-ddcf5e8b0591.png">
+</p>
 
 ## Typical workflow
 
-![](https://github.com/ethz-asl/maplab/wiki/images/diagrams/maplab_dataflow.png)
-
+<p align="center">
+  <img src="https://github.com/ethz-asl/maplab/wiki/images/diagrams/maplab_dataflow.png">
+</p>
 
 ### Online ROVIOLI frontend
 
-![](https://github.com/ethz-asl/maplab/wiki/images/rovioli-overview.png)
+<p align="center">
+  <img src="https://github.com/ethz-asl/maplab/wiki/images/rovioli-overview.png">
+</p>
 
 ### Offline maplab console
 

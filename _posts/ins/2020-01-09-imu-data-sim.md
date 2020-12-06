@@ -3,7 +3,7 @@ layout: article
 title:  "IMU数据仿真公式推导及代码实现"
 date:   2020-01-09
 tags: INS
-
+Key: imu-data-sim
 ---
 
 [TOC]

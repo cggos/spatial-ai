@@ -3,7 +3,7 @@ layout: article
 title:  "Ubuntu16.04下ARM远程调试环境搭建"
 date:   2018-10-18
 tags: Embedded
-
+key: ubuntu-arm-remote-debug
 ---
 
 1. 安装 交叉编译工具 **g++-arm-linux-gnueabi**

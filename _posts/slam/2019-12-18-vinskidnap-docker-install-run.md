@@ -3,7 +3,7 @@ layout: article
 title: "Ubuntu 16.04 下 VINS-Kidnap(Docker) 的安装和使用"
 date: 2019-12-18
 tags: SLAM
-
+key: slam-vinskidnap-docker-install-run
 ---
 
 [TOC]

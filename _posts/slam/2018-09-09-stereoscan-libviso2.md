@@ -3,7 +3,7 @@ layout: article
 title: "StereoScan(libVISO2) 学习笔记"
 date: 2018-09-09
 tags: SLAM
-
+key: slam-stereoscan-libviso2
 ---
 
 # Overview

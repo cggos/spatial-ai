@@ -3,7 +3,7 @@ layout: article
 title:  "IMU概述"
 date:   2020-05-24
 tags: INS
-
+key: imu-overview
 ---
 
 [TOC]

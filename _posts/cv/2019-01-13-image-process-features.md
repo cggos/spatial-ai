@@ -3,7 +3,7 @@ layout: article
 title:  "图像分析之图像特征"
 date:   2019-01-13
 tags: ComputerVision
-
+key: image-process-features
 ---
 
 [TOC]

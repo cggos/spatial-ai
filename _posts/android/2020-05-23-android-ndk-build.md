@@ -3,7 +3,7 @@ layout: article
 title:  "Ubuntu16.04 下 构建 Android(NDK) 应用"
 date:   2020-05-23
 tags: Android
-
+key: android-ndk-build
 ---
 
 [TOC]

@@ -3,7 +3,7 @@ layout: article
 title: "VINS-Mono 论文公式推导与代码解析"
 date: 2019-03-16
 tags: SLAM
-
+key: slam-vinsmono-note-cg
 ---
 
 [TOC]

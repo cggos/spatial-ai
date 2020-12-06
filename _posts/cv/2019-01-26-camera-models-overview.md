@@ -3,7 +3,7 @@ layout: article
 title:  "各相机模型(针孔+鱼眼)综述"
 date:   2019-01-26
 tags: ComputerVision
-
+key: camera-models-overview
 ---
 
 [TOC]

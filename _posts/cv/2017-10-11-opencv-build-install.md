@@ -3,6 +3,7 @@ layout: article
 title:  "OpenCV编译安装配置总结"
 date:   2017-10-11
 tags: ComputerVision
+key: opencv-build-install
 ---
 
 ﻿[TOC]

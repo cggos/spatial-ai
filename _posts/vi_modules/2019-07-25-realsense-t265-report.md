@@ -3,7 +3,7 @@ layout: article
 title:  "Intel RealSense T265 Report"
 date:   2019-07-25
 tags: VI-Modules
-
+key: realsense-t265-report
 ---
 
 [TOC]

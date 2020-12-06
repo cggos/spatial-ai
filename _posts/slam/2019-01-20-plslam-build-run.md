@@ -3,7 +3,7 @@ layout: article
 title: "Ubuntu 16.04 下 PL-SLAM (Stereo) 的安装和使用"
 date: 2019-01-20
 tags: SLAM
-
+key: slam-plslam-build-run
 ---
 
 [TOC]

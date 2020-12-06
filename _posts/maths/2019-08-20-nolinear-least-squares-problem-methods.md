@@ -3,7 +3,7 @@ layout: article
 title:  "非线性最小二乘问题解决方法"
 date:   2019-08-20
 tags: Maths
-
+key: nolinear-least-squares-problem-methods
 ---
 
 [TOC]

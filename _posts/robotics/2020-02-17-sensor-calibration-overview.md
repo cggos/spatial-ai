@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Robot Calibration"
+title:  "Sensor Calibration Overview"
 date:   2020-02-17
-tags: Robotics
-
+tags: Robotics SensorCalib
+key: sensor-calibration-overview
 ---
 
 * [mikeferguson/robot_calibration](https://github.com/mikeferguson/robot_calibration): Generic calibration for robots

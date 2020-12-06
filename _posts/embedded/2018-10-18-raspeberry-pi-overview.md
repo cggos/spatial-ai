@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Raspberry Pi"
+title:  "Raspberry Pi Overview"
 date:   2018-10-18
 tags: Embedded
-
+key: raspeberry-pi-overview
 ---
 
 * [raspberrypi.org](https://www.raspberrypi.org/)

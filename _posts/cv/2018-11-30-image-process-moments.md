@@ -3,7 +3,7 @@ layout: article
 title:  "图像空间域分析之图像统计特征"
 date:   2018-11-30
 tags: ComputerVision
-
+key: image-process-moments
 ---
 
 [TOC]

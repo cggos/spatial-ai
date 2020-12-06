@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Numerical Analysis"
+title:  "数值分析之插值"
 date:   2020-03-09
 tags: Maths
-
+key: numerical-analysis-Interpolation
 ---
 
 ## 插值（Interpolation）

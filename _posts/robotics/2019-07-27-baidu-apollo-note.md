@@ -2,8 +2,8 @@
 layout: article
 title:  "百度Apollo课程学习笔记"
 date:   2019-07-27
-tags: Robotics
-
+tags: Robotics AutonomousDriving
+key: baidu-apollo-note
 ---
 
 * the note is from [Apollo Self-Driving Car Lesson](http://apollo.auto/devcenter/devcenter.html)
@@ -109,7 +109,7 @@ tags: Robotics
   ![](../images/apollo/full_cnn.png)
 
 * Sensor Data Comparision  
-  ![](../images/apollo/sensor_comparision.png) 
+  ![](../images/apollo/sensor_comparision.png)
 
 * Perception Fusion
 
@@ -132,7 +132,7 @@ tags: Robotics
 * A star algorithm
 
 * 3D trajectory  
-  ![](../images/apollo/3D_trajectory.png) 
+  ![](../images/apollo/3D_trajectory.png)
 
 * Evaluating a Trajectory  
   ![](../images/apollo/evaluate_trajectory.png)
@@ -146,7 +146,7 @@ tags: Robotics
 * steering, acceleration and brake  
   ![](../images/apollo/control_input.png)
 
-* PID 
+* PID
 
 * LQR
 

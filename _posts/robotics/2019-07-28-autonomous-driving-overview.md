@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "Autonomous Driving"
+title:  "Autonomous Driving Overview"
 date:   2019-07-28
-tags: Robotics
-
+tags: Robotics AutonomousDriving
+key: autonomous-driving-overview
 ---
 
 * [Deepdrive](https://deepdrive.io/) is an open simulation platform built to accelerate progress and increase transparency in self-driving AI.

@@ -2,8 +2,8 @@
 layout: article
 title:  "传感器融合：基于EKF的Lidar与Radar数据融合"
 date:   2019-08-28
-tags: Robotics
-
+tags: Robotics MSF
+key: msf-ekf-lidar-radar
 ---
 
 [TOC]
@@ -44,7 +44,9 @@ $$
 
 ## Kalman Filter Algorithm
 
- ![](../images/kalman_filter/kalman_filter_matrix_process_flowchart.jpg)
+<p align="center">
+ <img src="../images/kalman_filter/kalman_filter_matrix_process_flowchart.jpg">
+</p>
 
 **State Prediction**:
 

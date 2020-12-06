@@ -3,7 +3,7 @@ layout: article
 title:  "针孔相机投影模型以及畸变模型"
 date:   2017-07-02
 tags: ComputerVision
-
+key: pinhole-camera-model
 ---
 
 [TOC]

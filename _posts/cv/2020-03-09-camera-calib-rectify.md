@@ -3,7 +3,7 @@ layout: article
 title:  "相机标定与矫正"
 date:   2020-03-09
 tags: ComputerVision
-
+key: camera-calib-rectify
 ---
 
 [TOC]

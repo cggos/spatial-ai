@@ -3,7 +3,7 @@ layout: article
 title: "RTAB-Map 闭环检测"
 date: 2019-06-27
 tags: SLAM
-
+key: slam-rtabmap-loopclosure
 ---
 
 [TOC]

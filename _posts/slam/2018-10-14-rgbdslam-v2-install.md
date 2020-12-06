@@ -3,7 +3,7 @@ layout: article
 title: "Ubuntu 16.04 下 RGBDSLAM-v2 的安装和使用"
 date: 2018-10-14
 tags: SLAM
-
+key: slam-rgbdslam-v2-install
 ---
 
 # 简介

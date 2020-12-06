@@ -2,7 +2,7 @@
 layout: article
 title:  "传感器融合：基于ESKF的IMU+GPS数据融合"
 date:   2020-07-26
-tags: Robotics
+tags: Robotics MSF
 key: msf-eskf-imu-gps
 ---
 

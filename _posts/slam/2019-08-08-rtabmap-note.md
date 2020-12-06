@@ -3,7 +3,7 @@ layout: article
 title: "RTAB-Map 学习笔记"
 date: 2019-08-08
 tags: SLAM
-
+key: slam-rtabmap-note
 ---
 
 version: 0.11.13-kinetic

@@ -3,7 +3,7 @@ layout: article
 title:  "图像频率域分析之傅里叶变换"
 date:   2018-12-01
 tags: ComputerVision
-
+key: image-process-fft2
 ---
 
 [TOC]

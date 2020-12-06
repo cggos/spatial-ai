@@ -1,9 +1,9 @@
 ---
 layout: article
-title:  "IMU Errors and Rectification"
+title:  "IMU误差分析"
 date:   2020-05-24
 tags: INS
-
+key: imu-errors-analysis
 ---
 
 [TOC]

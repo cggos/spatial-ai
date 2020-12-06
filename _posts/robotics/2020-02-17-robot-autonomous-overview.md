@@ -3,7 +3,7 @@ layout: article
 title:  "机器人自主定位导航 概述"
 date:   2020-02-17
 tags: Robotics
-
+key: robot-autonomous-localization-navigation-overview
 ---
 
 * [服务机器人究竟是如何实现自主定位导航的？](https://www.slamtec.com/cn/News/Detail/60)
