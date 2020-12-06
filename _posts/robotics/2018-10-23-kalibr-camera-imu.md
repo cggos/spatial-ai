@@ -6,6 +6,8 @@ tags: Robotics SensorCalib
 key: kalibr-camera-imu
 ---
 
+<div>{%- include extensions/youtube.html id='puNXsnrYWTY' -%}</div>
+
 [TOC]
 
 # Overview

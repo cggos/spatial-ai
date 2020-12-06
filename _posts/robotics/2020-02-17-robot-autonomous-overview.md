@@ -6,6 +6,10 @@ tags: Robotics
 key: robot-autonomous-localization-navigation-overview
 ---
 
+<div>{%- include extensions/ted.html id='vijay_kumar_the_future_of_flying_robots' -%}</div>
+
+[TOC]
+
 * [服务机器人究竟是如何实现自主定位导航的？](https://www.slamtec.com/cn/News/Detail/60)
 
 * [在实现自主导航之前，移动机器人都有哪些避障方法？](https://www.leiphone.com/news/201605/tTC7DaH95LwnVIZW.html)

@@ -6,6 +6,10 @@ tags: Robotics AutonomousDriving
 key: autonomous-driving-overview
 ---
 
+<div>{%- include extensions/ted.html id='sebastian_thrun_google_s_driverless_car' -%}</div>
+
+[TOC]
+
 * [Deepdrive](https://deepdrive.io/) is an open simulation platform built to accelerate progress and increase transparency in self-driving AI.
 * [BerkeleyDeepDrive](https://deepdrive.berkeley.edu/): We seek to merge deep learning with automotive perception and bring computer vision technology to the forefront.
 * [DeepDriving](http://deepdriving.cs.princeton.edu/): Learning Affordance for Direct Perception in Autonomous Driving
