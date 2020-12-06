@@ -6,6 +6,10 @@ tags: Robotics AutonomousDriving
 key: baidu-apollo-note
 ---
 
+<div>{%- include extensions/bilibili.html id='BV1oA411W7uz' -%}</div>
+
+[TOC]
+
 * the note is from [Apollo Self-Driving Car Lesson](http://apollo.auto/devcenter/devcenter.html)
 
 ## Self-Driving Overview
