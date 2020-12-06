@@ -1,0 +1,175 @@
+body
+{
+    margin: 0em;
+    /*background-image: url("./imgs/bkground.jpg");*/
+}
+#container
+{
+    width:100%;
+    margin:0px;
+    padding: 0px;
+    border:0px solid gray;
+
+}
+#header
+{
+    width: 100%;
+    padding-top:0.5em;
+    color:white;
+    text-align: center;
+    background-color:skyblue;
+    clear:left;
+}
+#header a
+{
+    text-decoration:none;
+    color: red;
+    text-align: center;
+    font-size:35pt;
+    FONT-FAMILY: 华文行楷;
+}
+#header p
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size:15pt;
+}
+
+#footer
+{
+    padding:0.5em;
+    color:white;
+    background-color:gray;
+    clear:left;
+}
+#content
+{
+    width: 100%;
+    height: 1000px;
+}
+#left-side
+{
+    background: #E6E6E6;
+    float: left;
+    height: 100%;
+    width: 20%;
+    overflow-y:auto;
+}
+#right-side
+{
+    float: left;
+    height: 100%;
+    width:80%;
+    margin-left: -2px;
+    border-left:1px solid gray;
+    border-right:1px solid gray;
+}
+
+#left-side .box
+{
+    margin:0 auto;
+    width:95%;
+    height:100px;
+    border:1px solid #000;
+    /*outline: #ffff00 dashed thick;*/
+    background-color: white;
+    overflow: hidden;
+}
+#left-side .signature
+{
+    height:80px;
+}
+#left-side .homepage
+{
+    height:120px;
+}
+#left-side p.box-title
+{
+    width: 100%;
+    margin: 0;
+    background-color: #00A0EA;
+    text-align: center;
+}
+
+#right-side #menu ul
+{
+    float:left;
+    width:100%;
+    padding:0;
+    margin:0 auto;
+    list-style-type:none;
+    text-align: center;
+    overflow: hidden;
+}
+#right-side #menu ul li
+{
+    width: 7em;
+    float:left;
+    line-height:150%;
+    border-right:1px solid white;
+    background-color: #4CAF50;
+}
+#right-side #menu ul li a.menu1
+{
+    display: inline-block;
+    width:100%;
+    color: white;
+    text-decoration:none;
+}
+#right-side #menu ul li a.menu1:hover
+{
+    background-color: red;
+}
+#right-side #menu .dropdown-content
+{
+    display: none;
+    position: absolute;
+    width: 6em;
+    padding-left: 1em;
+    background-color: #f9f9f9;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    text-align: left;
+}
+#right-side #menu .dropdown-content a
+{
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+#right-side #menu .dropdown-content a:hover
+{
+    color: red;
+}
+#right-side #menu .dropdown:hover .dropdown-content
+{
+    display: block;
+}
+
+
+#right-side #main-content
+{
+    margin:0 auto;
+    width:98%;
+    height:90%;
+    border:1px solid #000;
+    /*outline: #ffff00 dashed thick;*/
+    overflow: hidden;
+}
+
+#right-side #main-content table
+{
+    border-collapse:collapse;
+    margin: 0px auto;
+}
+#right-side #main-content table, th, td
+{
+    border:1px solid black;
+    text-align: center;
+}
+#right-side #main-content td
+{
+    width: 100px;
+    height: 30px;
+}

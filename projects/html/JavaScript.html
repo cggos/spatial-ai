@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+
+    <script type="text/javascript">
+
+        document.write(location.href);
+
+        var patt1 = new RegExp("e");
+        document.write("<p>"+patt1.test("test")+"</p>");
+
+        var txt="Hello world!";
+        document.write(txt.toUpperCase());
+
+        document.write("<h1 id='h1text'>This is a Heading.</h1>");
+
+        function changeText()
+        {
+            x=document.getElementById("h1text");  // 找到元素
+            x.innerHTML="Hello JavaScript!";  // 改变内容
+        }
+        function fact(num)
+        {
+            var TextValue = document.getElementById("idInputObj").value;
+            if(TextValue=="" || isNaN(TextValue))
+            {
+                return "请输入数字！";
+            }
+            else
+            {
+                var ret;
+                if(num<=1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return num*fact(num-1);
+                }
+            }
+        }
+        function GetWeek()
+        {
+            var day=new Date().getDay();
+            switch (day)
+            {
+                case 0:
+                    x="Sunday";
+                    break;
+                case 1:
+                    x="Monday";
+                    break;
+                case 2:
+                    x="Tuesday";
+                    break;
+                case 3:
+                    x="Wednesday";
+                    break;
+                case 4:
+                    x="Thursday";
+                    break;
+                case 5:
+                    x="Friday";
+                    break;
+                case 6:
+                    x="Saturday";
+                    break;
+            }
+            return x;
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+<button type="button" onclick="confirm('Welcome!')">Welcome</button>
+<button type="button" onclick="changeText()">改变文字</button>
+
+<p>
+    求阶乘：
+    <input id="idInputObj" type="text"/>
+    <button type="button" onclick="alert(fact(document.getElementById('idInputObj').value))">计算阶乘</button>
+</p>
+
+<p id="weekId"></p>
+
+<script type="text/javascript">
+    document.getElementById("weekId").innerHTML=GetWeek();
+
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    document.getElementById("weekId").innerHTML = width+","+height;
+
+    //window.open();
+</script>
+
+</body>
+</html>

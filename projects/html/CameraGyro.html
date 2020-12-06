@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name=" viewport"  content=" width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>Camera and Video Control with HTML5</title>
+	<link rel="stylesheet" href="../css/CamGyro.css">
+</head>
+
+<body>
+	<!--
+		Ideally these elements aren't created until it's confirmed that the 
+		client supports video/camera, but for the sake of illustrating the 
+		elements involved, they are created with markup (not JavaScript)
+	-->
+	<video id="video" autoplay></video>
+	<button id="snap">拍 照</button>
+	<div id="ImgFrm"></div>
+
+	<canvas id="canvas"></canvas>
+	<button id="saveImg">保 存</button>
+
+	<div id="box"></div>
+
+	<script>
+		window.onload=function(){
+		}
+
+		function saveFile(data, filename) {
+			var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+			save_link.href = data;
+			save_link.download = filename;
+
+			var event = document.createEvent('MouseEvents');
+			event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+			save_link.dispatchEvent(event);
+		}
+
+		// Put event listeners into place
+		window.addEventListener("DOMContentLoaded", function() {
+			// Grab elements, create settings, etc.
+			var canvas = document.getElementById("canvas"),
+				context = canvas.getContext("2d"),
+				video = document.getElementById("video"),
+				videoObj = { "video": true },
+				/*videoObj = {"video": {"mandatory": {"minWidth": "1280","minHeight": "960","minFrameRate": "30"}}},*/
+				errBack = function(error) {
+					console.log("Video capture error: ", error.code); 
+				};
+
+			// Put video listeners into place
+			if(navigator.getUserMedia) { // Standard
+				navigator.getUserMedia(videoObj, function(stream) {
+					video.src = stream;
+					video.play();
+				}, errBack);
+			} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+				navigator.webkitGetUserMedia(videoObj, function(stream){
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			} else if(navigator.mozGetUserMedia) { // WebKit-prefixed
+				navigator.mozGetUserMedia(videoObj, function(stream){
+					video.src = window.URL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+
+			// Trigger photo take
+			document.getElementById("snap").addEventListener("click", function() {
+				//document.getElementById("canvas").style.visibility = "visible";
+				document.getElementById("video").style.display="none";
+				document.getElementById("snap").style.display="none";
+				document.getElementById("ImgFrm").style.display="none";
+
+				document.getElementById("canvas").style.display="block";
+				document.getElementById("saveImg").style.display="block";
+				canvas.width = video.videoWidth;
+				canvas.height = video.videoHeight;
+				context.drawImage(video, 0, 0);
+			});
+
+			//保存照片
+			document.getElementById("saveImg").addEventListener("click", function() {
+				document.getElementById("video").style.display="block";
+				document.getElementById("snap").style.display="block";
+				document.getElementById("ImgFrm").style.display="block";
+
+				document.getElementById("canvas").style.display="none";
+				document.getElementById("saveImg").style.display="none";
+
+				var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+				saveFile(image, 'WebCamImg_' + new Date().getTime() + '.png');
+			});
+		}, false);
+
+	</script>
+
+	<script src="../js/jquery.js"></script>
+	<script>
+		var viewportWidth = window.innerWidth;
+		var viewportHeight = window.innerHeight;
+
+		/*
+		window.ondevicemotion = function(event) {
+			ax = Math.round(Math.abs(event.accelerationIncludingGravity.x * 1));
+			ay = Math.round(Math.abs(event.accelerationIncludingGravity.y * 1));
+			az = Math.round(Math.abs(event.accelerationIncludingGravity.z * 1));
+			ai = Math.round(event.interval * 100) / 100;
+			rR = event.rotationRate;
+			if (rR != null) {
+				arAlpha = Math.round(rR.alpha);
+				arBeta = Math.round(rR.beta);
+				arGamma = Math.round(rR.gamma);
+			}
+		}*/
+
+		var box = $("#box");
+		window.ondeviceorientation = function(event) {
+			alpha = Math.round(event.alpha);
+			beta = Math.round(event.beta);
+			gamma = Math.round(event.gamma);
+			$("#box").empty().text("b:"+beta+",g:"+gamma);
+//			box.css("left",42+gamma*0.3*viewportWidth/100);
+//			box.css("top",54.5+beta*0.47*viewportWidth/100);
+			box.css("left",gamma*0.3*viewportWidth/100);
+			box.css("top", beta*0.472*viewportWidth/100);
+
+//			box.css({left: 42+gamma*0.3+'vw'});
+//			box.css({top: 54.5+gamma*0.47+'vw'});
+//			box.css("left",gamma*5);
+//			box.css("top",beta*5);
+		}
+	</script>
+</div>
+</body>
+</html>
