@@ -1,5 +1,5 @@
 .author-profile {
-  max-width: 25rem;
+  max-width: 50rem;
   padding: map-get($spacers, 2) map-get($spacers, 3);
   margin: map-get($spacers, 4) 0;
   font-size: map-get($base, font-size-sm);
@@ -9,8 +9,8 @@
   }
 }
 .author-profile__avatar {
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   margin-top: map-get($spacers, 2);
   border-radius: 50%;
 }

@@ -34,10 +34,10 @@ timezone: Asia/Shanghai # see https://en.wikipedia.org/wiki/List_of_tz_database_
 ## => Author and Social
 ##############################
 author:
-  type      : # "person" (default), "organization"
+  type      : "person" # "person" (default), "organization"
   name      : Gavin Gao
-  url       :
-  avatar    : # path or url of avatar image (square)
+  url       : https://cggos.github.io
+  avatar    : /assets/images/avatar/ghc.jpg # path or url of avatar image (square)
   bio       : 'Stay hungry,Stay foolish'
   email     : cggos@outlook.com
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name

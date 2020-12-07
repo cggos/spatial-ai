@@ -49,5 +49,8 @@ header:
       # @end locale config
     url: /about.html
 
+  - title:      Bio
+    url: /bio.html
+
   - title:      WebDemo
     url: /projects/homepage.html
