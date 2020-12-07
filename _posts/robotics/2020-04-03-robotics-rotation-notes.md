@@ -8,7 +8,49 @@ key: robotics-rotation-abc
 
 [TOC]
 
-## 旋转小量
+# 旋转表示
+
+## euler angle
+
+## rotation vector
+
+$$
+\boldsymbol \phi = \mathbf{u} \theta
+$$
+
+## rotation matrix
+
+$$
+R = \exp({{\boldsymbol \phi}^{\wedge}})
+$$
+
+## SO3 Lie Group & Lie Algebra
+
+$$
+R = \exp({{\boldsymbol \phi}^{\wedge}}) \in SO3
+$$
+
+## rotation(unit) quarternion
+
+$$
+\mathbf{q}
+= \exp(\frac{\boldsymbol \phi}{2})
+= \cos(\frac{\theta}{2}) + \mathbf{u} \sin(\frac{\theta}{2})
+$$
+
+
+# 旋转方式
+
+## active
+
+* rotating vectors
+
+## passive
+
+* rotating frames
+
+
+# 旋转小量
 
 * 若小旋转向量 $\Delta \boldsymbol{\phi}$，则旋转小量
 
@@ -33,7 +75,17 @@ $$
 \mathbf{q} \leftarrow \mathbf{q} \otimes \Delta \mathbf{q}
 $$
 
-## 时间导数
+
+# 旋转扰动
+
+## Local Perturbation
+
+## Global Perturbation
+
+
+# 旋转导数
+
+## 对时间求导
 
 * 若角速度为 $\boldsymbol{\omega}$，那么旋转的时间导数为
 
@@ -51,9 +103,9 @@ $$
 
 ## 对旋转求导
 
-### 李群李代数求导
+### 李代数加法方式
 
-* 用李代数表示位姿，然后根据李代数加法来对李代数求导
+用李代数表示位姿，然后根据李代数加法来对李代数求导
 
 $$
 \begin{aligned}
@@ -73,16 +125,25 @@ $$
 \boldsymbol{J}_{l}=\boldsymbol{J}=\frac{\sin \theta}{\theta} \boldsymbol{I}+\left(1-\frac{\sin \theta}{\theta}\right) \boldsymbol{a} \boldsymbol{a}^{T}+\frac{1-\cos \theta}{\theta} \boldsymbol{a}^{\wedge}
 $$
 
-*  对李群左乘或者右乘微小扰动量，然后对该扰动求导，成为左扰动和右扰动模型，这种方式 **省去了计算雅克比**，所以使用更为常见
+### 扰动方式
+
+对李群左乘或者右乘微小扰动量，然后对该扰动求导，成为左扰动和右扰动模型，这种方式 **省去了计算雅克比**，所以使用更为常见
+
+（1）$\frac{d(\mathbf{R} \mathbf{p})}{d \mathbf{R}}$
 
 $$
 \begin{aligned}
-\frac{\partial(\boldsymbol{R} \boldsymbol{p})}{\partial \boldsymbol{\varphi}} &=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\exp \left(\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
+\frac{d(\mathbf{R} \mathbf{p})}{d \mathbf{R}}
+&=\frac{\partial(\boldsymbol{R} \boldsymbol{p})}{\partial \boldsymbol{\varphi}} \\
+&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\exp \left(\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
 & \approx \lim _{\varphi \rightarrow 0} \frac{\left(1+\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
-&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\boldsymbol{\varphi}^{\wedge} \boldsymbol{R} \boldsymbol{p}}{\varphi}=\lim _{\varphi \rightarrow 0} \frac{-(\boldsymbol{R} \boldsymbol{p})^{\wedge} \boldsymbol{\varphi}}{\varphi} \\
+&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\boldsymbol{\varphi}^{\wedge} \boldsymbol{R} \boldsymbol{p}}{\varphi} \\
+&=\lim _{\varphi \rightarrow 0} \frac{-(\boldsymbol{R} \boldsymbol{p})^{\wedge} \boldsymbol{\varphi}}{\varphi} \\
 &=-(\boldsymbol{R} \boldsymbol{p})^{\wedge}
 \end{aligned}
 $$
+
+（2）$\frac{d(\mathbf{R}^{-1} \mathbf{p})}{d \mathbf{R}}$
 
 $$
 \begin{aligned}
@@ -102,6 +163,8 @@ $$
 &= (\mathbf{R}^{-1}\mathbf{p})^{\wedge}
 \end{aligned}
 $$
+
+（3）$\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d \mathbf{R}_2}$
 
 $$
 \begin{aligned}
