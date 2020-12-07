@@ -1,9 +1,16 @@
+{%- include snippets/get-locale-string.html key='REWARD_TEXT' -%}
+{%- assign _reward_text = __return -%}
+{%- include snippets/get-locale-string.html key='REWARD_WECHAT' -%}
+{%- assign _reward_wechat = __return -%}
+{%- include snippets/get-locale-string.html key='REWARD_ALIPAY' -%}
+{%- assign _reward_alipay = __return -%}
+
 <div class="reward_pay">
-  <p class="reward_pay_text">您的支持是我的动力，如果本文对您有所帮助，欢迎扫描下方二维码进行打赏，感谢支持。</p>
+  <p class="reward_pay_text">{{ _reward_text }}</p>
   <table style="margin: auto">
     <thead><tr>
-      <th>微信支付</th>
-      <th>支付宝</th>
+      <th>{{ _reward_wechat }}</th>
+      <th>{{ _reward_alipay }}</th>
     </tr></thead>
     <tbody><tr>
       <td><img style="max-widht: 150px; max-height: 150px" src="https://raw.githubusercontent.com/cggos/cggos.github.io/master/assets/images/reward_wechat.png" alt="微信支付二维码" /></td>
