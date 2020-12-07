@@ -21,13 +21,13 @@ $$
 ## rotation matrix
 
 $$
-R = \exp({{\boldsymbol \phi}^{\wedge}})
+R = \exp({\boldsymbol \phi^{\wedge}})
 $$
 
 ## SO3 Lie Group & Lie Algebra
 
 $$
-R = \exp({{\boldsymbol \phi}^{\wedge}}) \in SO3
+R = \exp({\boldsymbol \phi^{\wedge}}) \in SO3
 $$
 
 ## rotation(unit) quarternion
