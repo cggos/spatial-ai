@@ -28,6 +28,23 @@ With the tutorial of w3school, I studied technology of Front End,which is as fol
 * run in your project dir: `jekyll serve` or `bundle exec jekyll serve`
 * update **Gemfile**: delete **Gemfile.lock** and `bundle install`
 
+### HOW TO RELEASE
+
+#### Preparation
+
+- *assets/css/main.scss* use configurable skin
+- update *CHANGELOG.md*
+- update version (*jekyll-text-theme.gemspec*, *package.json*, *_includes/scripts/variables.html*)
+
+#### Publishing
+
+- run `npm run gem-build` to build gem
+- run `npm run gem-push` to publish gem to rubygems.org
+- run `git add . && git commit -m  "release: vx.x.x"` to make a release commit
+- run `git tag vx.x.x` to add a tag
+- run `git push && git push origin vx.x.x` to push
+- edit release on github.com
+
 ## Add-ons
 
 * [博客园页面设置](http://www.cnblogs.com/zhaopei/p/4174811.html)
