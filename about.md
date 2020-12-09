@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: page_simple
 titles:
   # @start locale config
   en      : &EN       About

@@ -25,3 +25,8 @@ titles:
   # @end locale config
 key: page-bio
 ---
+
+## Research Interests
+
+* Skill: CV, SLAM, VIO, MSF, Robotics, HPC
+* Industry: AR/VR, Mobile Robot, Autonomous Driving, Drones
