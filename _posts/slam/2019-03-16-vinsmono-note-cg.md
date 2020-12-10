@@ -17,6 +17,7 @@ key: slam-vinsmono-note-cg
 **Monocular visual-inertial odometry** with relocalization achieved via **nonlinear graph optimization-based, tightly-coupled, sliding window, visual-inertial bundle adjustment**.
 
 * 代码（注释版）：[cggos/vins_mono_cg](https://github.com/cggos/vins_mono_cg)
+* PDF文档：https://github.com/cggos/vins_mono_cg/blob/master/docs/vinsmono_note_cg.pdf （持续更新中）
 
 # 1. 测量预处理
 
