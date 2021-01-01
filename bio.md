@@ -30,3 +30,9 @@ key: page-bio
 
 * Skill: CV, SLAM, VIO, MSF, Robotics, HPC
 * Industry: AR/VR, Mobile Robot, Autonomous Driving, Drones
+
+## Slack Workspaces
+
+* AIPark: aipark.slack.com
+* AISLAM: aislam.slack.com
+* CVision: aicvision.slack.com
