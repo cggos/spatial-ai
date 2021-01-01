@@ -36,3 +36,9 @@ key: page-bio
 * AIPark: aipark.slack.com
 * AISLAM: aislam.slack.com
 * CVision: aicvision.slack.com
+
+## Presentations
+
+* Slides: [SlideShare](https://www2.slideshare.net/HongchenGao)
+
+* Videos: [Bilibili](https://space.bilibili.com/158441969)
