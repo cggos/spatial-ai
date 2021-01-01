@@ -32,6 +32,8 @@ Basic Epipolar Geometry entities for **pinhole cameras** and **panoramic camera*
 
 # Foundamental Matrix (基础矩阵)
 
+<div>{%- include extensions/youtube.html id='DgGV3l82NTk' -%}</div>
+
 对极约束：
 
 $$
