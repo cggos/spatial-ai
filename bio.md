@@ -36,6 +36,8 @@ key: page-bio
 * AIPark: aipark.slack.com
 * AISLAM: aislam.slack.com
 * CVision: aicvision.slack.com
+* RoboticsCG: robotics-cg.slack.com
+* AIXR: aixr-cg.slack.com
 
 ## Presentations
 
