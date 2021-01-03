@@ -20,9 +20,9 @@ text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate"
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : "" # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : "" # does not include hostname
-title   : Gavin Gao's Blog
+title   : CG's Blog
 description: > # this means to ignore newlines until "Language & timezone"
-  "SLAM | Computer Vision | HPC"
+  "Computer Vision | SLAM | MSF | HPC | Robotics | XR"
 
 
 ## => Language and Timezone
@@ -42,7 +42,7 @@ author:
   email     : cggos@outlook.com
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : cggosc # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
-  weibo     : # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
+  weibo     : cggone # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
   googleplus: # "user_id"   the last part of your profile url, e.g. https://plus.google.com/u/0/user_id
   telegram  : cggos # "user_name" the last part of your profile url, e.g. https://t.me/user_name
   medium    : # "user_name" the last part of your profile url, e.g. https://medium.com/user_name
