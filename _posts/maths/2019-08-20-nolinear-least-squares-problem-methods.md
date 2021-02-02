@@ -1,8 +1,8 @@
 ---
 layout: article
-title:  "非线性最小二乘问题解决方法"
+title:  "最小二乘问题解决方法"
 date:   2019-08-20
-tags: Maths
+tags: Maths StateEstimation
 key: nolinear-least-squares-problem-methods
 ---
 
