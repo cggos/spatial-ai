@@ -29,7 +29,7 @@ v = \text{round}(v^{\prime})
 \end{cases}
 $$
 
-```C++
+```cpp
 case INTERPOLATION_NEAREST: {
     int lx = static_cast<int>(std::round(x));
     int ly = static_cast<int>(std::round(y));
@@ -99,7 +99,7 @@ f(u+\alpha, v+\beta) =
 \alpha \beta f_{11}
 $$
 
-```C++
+```cpp
 case INTERPOLATION_BILINEAR: {
     const int lx = std::floor(x);
     const int ly = std::floor(y);
