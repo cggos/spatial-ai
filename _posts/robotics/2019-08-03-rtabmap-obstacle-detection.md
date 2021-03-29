@@ -2,7 +2,7 @@
 layout: article
 title:  "RTAB-Map 障碍物检测"
 date:   2019-08-03
-tags: Robotics ObstacleAvoidance
+tags: Robotics
 key: rtabmap-obstacle-detection
 ---
 
