@@ -189,7 +189,7 @@ r = \ln(R_1 \cdot R_2^T)^\vee =
 $$
 
 $$
-\frac{r}{{\theta}_2} = -I
+\frac{r}{\theta_2} = -I
 $$
 
 ### 四元数形式
