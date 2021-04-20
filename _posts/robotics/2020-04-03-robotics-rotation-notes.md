@@ -180,3 +180,54 @@ $$
 &= -\mathbf{J}_r^{-1}(\ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}) \mathbf{R}_2
 \end{aligned}
 $$
+
+（4）$\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d {\theta}_2}$
+
+$$
+r = \ln(R_1 \cdot R_2^T)^\vee =
+\ln \left[ \exp({\theta}_1^{\wedge}) \cdot \exp(-{\theta}_2^{\wedge}) \right]^\vee = {\theta}_1 - {\theta}_2
+$$
+
+$$
+\frac{r}{{\theta}_2} = -I
+$$
+
+### 四元数形式
+
+$$
+r = \delta \theta
+= 2 \left[ q_1 \otimes q_2^{-1} \right]_{xyz}
+= 2 \left[ q_1 \otimes q_2^{*} \right]_{xyz}
+$$
+
+$$
+\begin{aligned}
+  \frac{\partial r}{\partial {\theta}_2}
+  &= \frac{\partial 2 \left[ q_1 \otimes q_2^{*} \right]_{xyz}}{\partial {\theta}_2} \\
+  &=
+  \frac
+  {\partial 2
+  \left[ q_1 \otimes
+  \left[ q_2 \otimes \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \right]^{*}
+  \right]_{xyz}}
+  {\partial {\theta}_2} \\
+  &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
+  \frac{\partial
+  \left[ q_1^* \otimes q_2 \otimes
+  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \right]}
+  {\partial {\theta}_2} \\
+  &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
+  \frac{\partial
+  \left[ L(q_1^* \otimes q_2) \cdot
+  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \right]}
+  {\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}} \cdot
+  \frac{\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}}
+  {\partial {\theta}_2} \\
+  &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
+  L(q_1^* \otimes q_2) \cdot
+  \begin{bmatrix} 0 \\ \frac{1}{2} I \end{bmatrix}
+\end{aligned}
+$$
