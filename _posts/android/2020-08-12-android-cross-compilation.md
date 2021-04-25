@@ -32,6 +32,8 @@ Add the following code in `CImg.h` from https://github.com/dtschump/CImg.git to 
 
 ### ceres-solver-1.14.0
 
+ref: [How to Compile Ceres Android Library with NDK under Mac](https://programmer.group/how-to-compile-ceres-android-library-with-ndk-under-mac.html)
+
 替换 `ceres-solver-1.14.0/jni` 下 `Application.mk` 中的内容为
 
 ```mk
