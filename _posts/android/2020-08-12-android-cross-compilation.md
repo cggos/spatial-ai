@@ -30,7 +30,30 @@ Add the following code in `CImg.h` from https://github.com/dtschump/CImg.git to 
 
 ## build Google Ceres-Solver for Android
 
-* TODO
+### ceres-solver-1.14.0
+
+ref: [How to Compile Ceres Android Library with NDK under Mac](https://programmer.group/how-to-compile-ceres-android-library-with-ndk-under-mac.html)
+
+替换 `ceres-solver-1.14.0/jni` 下 `Application.mk` 中的内容为
+
+```mk
+APP_BUILD_SCRIPT := $(call my-dir)/Android.mk
+APP_PROJECT_PATH := $(call my-dir)
+
+APP_CPPFLAGS := -frtti -fexceptions -std=c++0x
+APP_OPTIM := release
+
+APP_STL := gnustl_static
+APP_ABI := armeabi-v7a
+```
+
+在 `ceres-solver-1.14.0/jni` 下
+
+```sh
+EIGEN_PATH=/home/cg/projects/3rdparty/eigen-3.3.7 ndk-build -j1
+```
+
+编译完后，在 `ceres-solver-1.14.0/obj/local/armeabi-v7a` 下生成 `libceres.a` 文件。
 
 ## build FFTW for Android
 
