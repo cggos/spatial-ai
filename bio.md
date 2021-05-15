@@ -32,11 +32,8 @@ key: page-bio
 
 ## Research Interests
 
-* Skills
-  - CV, SLAM, VIO, MSF, Robotics, HPC
-* Fields
-  - XR: AR, VR, MR
-  - Robotics: Mobile Robot, Autonomous Driving, Drones
+* Skills: CV, SLAM, VIO, MSF, Robotics, HPC
+* Fields: XR(AR, VR, MR), Robotics(Mobile Robot, Autonomous Driving, Drones)
 
 ## Presentations
 
