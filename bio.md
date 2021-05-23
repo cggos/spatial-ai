@@ -26,9 +26,11 @@ titles:
 key: page-bio
 ---
 
-* <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0003-2841-6617</a></div>
+* [Download Resume (PDF, zh)](http://gofile.me/5lGth/Dh3dvADvJ)
 
-* <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/rg_logo.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
+* <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="assets/images/logo_orcid.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0003-2841-6617</a></div>
+
+* <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
 
 ## Research Interests
 
