@@ -38,6 +38,10 @@ $$
 = \cos(\frac{\theta}{2}) + \mathbf{u} \sin(\frac{\theta}{2})
 $$
 
+$$
+R = C(q) \longrightarrow R^T = C(q^{-1})
+$$
+
 
 # 旋转方式
 
