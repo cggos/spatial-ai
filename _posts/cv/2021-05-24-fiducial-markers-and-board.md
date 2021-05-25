@@ -7,6 +7,10 @@ key: fiducial-markers-and-board
 
 [TOC]
 
+# Overview
+
+* [Raspberry Pi position detection using fiducial tags](https://iosoft.blog/2019/09/02/raspberry-pi-position-detection-fiducial-tags/)
+
 # AprilTag
 
 [AprilTag](https://april.eecs.umich.edu/software/apriltag) is a **visual fiducial system**, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration.
