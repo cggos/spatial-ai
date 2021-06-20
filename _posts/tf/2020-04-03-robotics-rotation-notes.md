@@ -218,20 +218,20 @@ $$
   {\partial {\theta}_2} \\
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
   \frac{\partial
-  \left[ q_1^* \otimes q_2 \otimes
-  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \left[ q_2 \otimes
+  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix} \otimes q_1^*
   \right]}
   {\partial {\theta}_2} \\
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
   \frac{\partial
-  \left[ L(q_1^* \otimes q_2) \cdot
+  \left[ L(q_2) \cdot R(q_1^*) \cdot
   \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
   \right]}
   {\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}} \cdot
   \frac{\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}}
   {\partial {\theta}_2} \\
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
-  L(q_1^* \otimes q_2) \cdot
+  L(q_2) \cdot R(q_1^*) \cdot
   \begin{bmatrix} 0 \\ \frac{1}{2} I \end{bmatrix}
 \end{aligned}
 $$
