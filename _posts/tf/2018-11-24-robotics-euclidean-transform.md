@@ -9,14 +9,19 @@ key: robotics-euclidean-transform
 [TOC]
 
 # 理论基础
+
 三维空间中的变换主要分为如下几种：
+
 * 射影变换
 * 仿射变换
 * 相似变换
 * 欧式变换
 
 其性质如下图所示：  
-![3d_transform.png](../images/3d_transform/3d_transform.png)
+
+<p align="center">
+  <img src="../images/3d_transform/3d_transform.png"/>
+</p>
 
 本文主要介绍欧式变换。
 
@@ -141,23 +146,32 @@ $$
 \mathbf{R} = \mathbf{R}_1 \mathbf{R}_2 \mathbf{R}_3
 $$
 
-根据绕轴的不同，欧拉角共分为两大类，共12种，如下图（基于 **右手系**）所示：    
-![euler_angles_12.png](../images/3d_transform/euler_angles_12.jpg)
+根据绕轴的不同，欧拉角共分为两大类，共12种，如下图（基于 **右手系**）所示：
+
+<p align="center">
+  <img src="../images/3d_transform/euler_angles_12.jpg"/>
+</p>
 
 <a name="is_fixed_axis"></a>
 
 以上不同旋转轴合成的旋转矩阵，每一种都可以看成 **同一旋转矩阵的两种不同物理变换**：
+
 * 绕 **固定轴** 旋转
 * 绕 **动轴** 旋转
 
 以 **$Z_1Y_2X_3$** 进行为例，旋转矩阵表示为 $\mathbf{R} = \mathbf{R}_z \mathbf{R}_y \mathbf{R}_x$，说明：
+
 * 绕 **固定轴** 旋转：以初始坐标系作为固定坐标系，**分别先后绕固定坐标系的X、Y、Z轴** 旋转；
+
 * 绕 **动轴** 旋转：先绕 **初始Z轴** 旋转，再绕 **变换后的Y轴** 旋转，最后绕 **变换后的X轴** 旋转
 
 即 绕 **固定坐标轴的XYZ** 和 **绕运动坐标轴的ZYX** 的旋转矩阵是一样的。
 
 我们经常用的欧拉角一般就是 **$Z_1Y_2X_3$** 轴序的 **yaw-pitch-roll**，如下图所示：  
-![rpy_plane.png](../images/3d_transform/rpy_plane.png)
+
+<p align="center">
+  <img src="../images/3d_transform/rpy_plane.png"/>
+</p>
 
 对应的旋转矩阵为  
 
@@ -206,7 +220,9 @@ sin(\theta) &  cos(\theta) & 0 \\
 $$
 
 #### 旋转转换
+
 * [Maths - Rotation conversions](https://www.euclideanspace.com/maths/geometry/rotations/conversions/index.htm)
+
 * [ptam_cg/src/Tools.cc](https://github.com/cggos/ptam_cg/blob/master/src/Tools.cc)
 
 ### 平移
@@ -300,13 +316,23 @@ $$
 * [四元数矩阵与 so(3) 左右雅可比](https://fzheng.me/2018/05/22/quaternion-matrix-so3-jacobians/)
 
 ## <a name="coordinate_handle_rules">坐标系手性</a>
+
 坐标系的手性主要分为 **右手系** 和 **左手系**，主要通过以下两种方法区分（右手系）：
+
 * **3 finger method**   
-  ![right_handed_3fingers.png](../images/3d_transform/right_handed_3fingers.png)
+
+  <p align="center">
+    <img src="../images/3d_transform/right_handed_3fingers.png"/>
+  </p>
+
 * **Curling method**  
-  ![right_handed_curling.png](../images/3d_transform/right_handed_curling.png)
+
+  <p align="center">
+    <img src="../images/3d_transform/right_handed_curling.png"/>
+  </p>
 
 另外，不同的几何编程库所基于的坐标系的手性会有所不同
+
 * Eigen: 右手系
 * OpenGL: 右手系
 * Unity3D: 左手系
@@ -323,8 +349,9 @@ $$
 指的是 将某点在B坐标系中的坐标表示变换为其在A坐标系中的坐标表示，实质是同一点在不同坐标系下的不同坐标表示，即 **点的变换**；若将A和B坐标系假设为刚体，则B坐标系变换到A坐标系（**坐标系本身的变换**）的变换矩阵为 $\mathbf{T}_{AB}^{-1}$。
 
 * 使用传感器（Camera-IMU）标定工具（例如Kalibr）标定出的外参指的是 **点的变换**
+
 * ROS中 **static_transform_publisher** 则是 **坐标系本身的变换**
-  ```
+  ```sh
   static_transform_publisher x y z yaw pitch roll frame_id child_frame_id period_in_ms
   ```
 
@@ -350,8 +377,9 @@ $$
 
 因为上面的变换都是 **坐标系的变换**，所以矩阵相乘 从左到右，即 **矩阵右乘**
 
-![pointcloud_imu.jpg](../images/3d_transform/pointcloud_imu.jpg)
-
+<p align="center">
+  <img src="../images/3d_transform/pointcloud_imu.jpg"/>
+</p>
 
 
 # 编程库实践
@@ -359,9 +387,10 @@ $$
 下面通过示例代码对自己使用过的库进行介绍。
 
 ## Eigen
+
 Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
 
-```c++
+```cpp
 Eigen::Matrix3d m3_r_z = Eigen::AngleAxisd(M_PI/2, Eigen::Vector3d(0,0,1)).toRotationMatrix();
 Eigen::Quaterniond q_r_z(m3_r_z);
 
@@ -376,10 +405,12 @@ m4_transform.block<3,3>(0,0) = m3_rotation;
 ```
 
 ## TooN
+
 Tom’s Object-oriented numerics library, is a set of C++ header files which provide basic linear algebra facilities
 
 [Array2SE3](https://github.com/cggos/ptam_cg/blob/master/src/Tools.cc#L42-L66):
-```c++
+
+```cpp
 #include <TooN/TooN.h>
 #include <TooN/se3.h>
 
@@ -411,9 +442,10 @@ void Tools::Array2SE3(const float *array, SE3<> &se3)
 ```
 
 ## Sophus
+
 C++ implementation of Lie Groups using Eigen commonly used for 2d and 3d geometric problems (i.e. for Computer Vision or Robotics applications)
 
-```c++
+```cpp
 #include <iostream>
 #include <sophus/se3.hpp>
 
@@ -446,7 +478,7 @@ std::cout << "SE3 updated = " << std::endl
 
 tf is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
 
-```c++
+```cpp
 #include <Eigen/Geometry>
 #include <tf_conversions/tf_eigen.h>
 #include <tf2/LinearMath/Quaternion.h>
