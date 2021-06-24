@@ -107,7 +107,7 @@ $$
 
 ## 对旋转求导
 
-### 李代数加法方式
+### 李代数求导
 
 用李代数表示位姿，然后根据李代数加法来对李代数求导
 
@@ -185,6 +185,12 @@ $$
 \end{aligned}
 $$
 
+性质：
+
+$$
+R \exp({\phi}^{\wedge}) R^{-1} = \exp(R {\phi}^{\wedge})
+$$
+
 （4）$\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d {\theta}_2}$
 
 $$
@@ -196,6 +202,8 @@ $$
 \frac{r}{\theta_2} = -I
 $$
 
+（4）式推导错误，因为对于矩阵A和B，$\exp(A)\exp(B) \neq \exp(A+B)$
+
 ### 四元数形式
 
 $$
@@ -206,32 +214,35 @@ $$
 
 $$
 \begin{aligned}
-  \frac{\partial r}{\partial {\theta}_2}
-  &= \frac{\partial 2 \left[ q_1 \otimes q_2^{*} \right]_{xyz}}{\partial {\theta}_2} \\
+  \frac{\partial r}{\partial \delta {\theta}_2}
+  &= \frac{\partial 2 \left[ q_1 \otimes q_2^{*} \right]_{xyz}}{\partial \delta {\theta}_2} \\
   &=
   \frac
   {\partial 2
   \left[ q_1 \otimes
-  \left[ q_2 \otimes \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \left[ q_2 \otimes \delta q_2
   \right]^{*}
   \right]_{xyz}}
-  {\partial {\theta}_2} \\
+  {\partial \delta {\theta}_2} \\
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
   \frac{\partial
   \left[ q_2 \otimes
-  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix} \otimes q_1^*
+  \delta q_2 \otimes q_1^*
   \right]}
-  {\partial {\theta}_2} \\
+  {\partial \delta {\theta}_2} \\
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
   \frac{\partial
-  \left[ L(q_2) \cdot R(q_1^*) \cdot
-  \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}
+  \left[ L(q_2) \cdot R(q_1^*) \cdot \delta q_2
   \right]}
-  {\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}} \cdot
-  \frac{\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}}
-  {\partial {\theta}_2} \\
+  {\partial \delta q_2} \cdot
+  \frac{\partial \delta q_2}
+  {\partial {\theta}_2} \\  
   &= -2 \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
   L(q_2) \cdot R(q_1^*) \cdot
-  \begin{bmatrix} 0 \\ \frac{1}{2} I \end{bmatrix}
+  \frac{\partial \begin{bmatrix} 1 \\ \frac{1}{2} {\theta}_2 \end{bmatrix}}
+  {\partial {\theta}_2} \\
+  &= - \begin{bmatrix} 0 & I \end{bmatrix}_{3 \times 4} \cdot
+  L(q_2) \cdot R(q_1^*) \cdot
+  \begin{bmatrix} 0 \\ I \end{bmatrix}_{4 \times 3}
 \end{aligned}
 $$
