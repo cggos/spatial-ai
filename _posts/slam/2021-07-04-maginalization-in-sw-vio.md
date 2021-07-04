@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "VINS-Mono Marginalization"
+title: "Marginalization in Sliding Window VIO"
 tags: SLAM
-key: slam-vinsmono-marginalization
+key: slam-sw-vio-marginalization
 ---
 
 [TOC]
@@ -49,7 +49,7 @@ Marginalization and Conditioning operations on a gaussian distribution expressse
 ## 数据结构
 
 <p align="center">
-  <img src="../images/vins_mono/vins_mono_marg_datastructure.png" style="width:100%;"/>
+  <img src="../images/vins_mono/marg_datastructure.png" style="width:100%;"/>
 </p>
 
 ## 代码逻辑
@@ -96,18 +96,22 @@ for (auto it : factors) {
 
 ### marginalize
 
+#### Marginalization via Schur complement on information matrix
+
 <p align="center">
   <img src="../images/vins_mono/schur_complement.png" style="width:90%;"/>
 </p>
 
+#### fill in of the information matrix
+
 <p align="center">
-  <img src="../images/vins_mono/marg_update_prior_residual.png"/>
+  <img src="../images/vins_mono/marg_H_fillin.png" style="width:100%;"/>
 </p>
 
 #### linearized_jacobians & linearized_residuals
 
 <p align="center">
-  <img src="../images/vins_mono/vins_mono_marg.jpg" style="width:100%;"/>
+  <img src="../images/vins_mono/marg_linearize_J_r.jpg" style="width:100%;"/>
 </p>
 
 ```cpp
@@ -126,6 +130,10 @@ linearized_residuals = S_inv_sqrt.asDiagonal() * saes2.eigenvectors().transpose(
 ```
 
 ### MarginalizationFactor::Evaluate
+
+<p align="center">
+  <img src="../images/vins_mono/marg_update_prior_residual.png"/>
+</p>
 
 ```cpp
 int n = marginalization_info->n;
@@ -166,3 +174,31 @@ if (jacobians) {
     }
 }
 ```
+
+# First Estimate Jacobian
+
+FEJ 算法：不同残差对同一个状态求雅克比时，线性化点必须一致，这样就能避免零空间退化而使得不可观变量变得可观。
+
+## Consistency in SW
+
+<p align="center">
+  <img src="../images/sliding_window/sw_consistency.png" style="width:90%;"/>
+</p>
+
+多个解的问题，变成了一个确定解。不可观的变量，变成了可观的。
+
+## 边缘化后增加新变量
+
+<p align="center">
+  <img src="../images/sliding_window/sw_new_node.png"/>
+</p>
+
+注意: $\xi_2$ 自身的信息矩阵由两部分组成,这会使得系统存在潜在风险。
+
+**滑动窗口中的问题**：滑动窗口算法中,对于同一个变量,不同残差对其计算雅克比矩阵时线性化点可能不一致,导致信息矩阵可以分成两部分,相当于在信息矩阵中多加了一些信息,使得其零空间出现了变化。
+
+<p align="center">
+  <img src="../images/sliding_window/sw_new_node1.png"/>
+</p>
+
+**解决办法：First Estimated Jacobian。**
