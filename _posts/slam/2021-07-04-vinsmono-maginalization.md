@@ -1,0 +1,168 @@
+---
+layout: article
+title: "VINS-Mono Marginalization"
+tags: SLAM
+key: slam-vinsmono-marginalization
+---
+
+[TOC]
+
+# Marginal Probability
+
+$$
+\begin{aligned}
+  P(\boldsymbol{a}, \boldsymbol{b})
+  &=\mathcal{N}\left(\left[\begin{array}{l}
+  \boldsymbol{\mu}_{a} \\
+  \boldsymbol{\mu}_{b}
+  \end{array}\right],\left[\begin{array}{ll}
+  \boldsymbol{\Sigma}_{a a} & \boldsymbol{\Sigma}_{a b} \\
+  \boldsymbol{\Sigma}_{b a} & \boldsymbol{\Sigma}_{b b}
+  \end{array}\right]\right) \\
+  &=\mathcal{N}^{-1}\left(\left[\begin{array}{l}
+  \boldsymbol{\eta}_{a} \\
+  \boldsymbol{\eta}_{b}
+  \end{array}\right],\left[\begin{array}{cc}
+  \boldsymbol{\Lambda}_{a a} & \boldsymbol{\Lambda}_{a a} \\
+  \boldsymbol{\Lambda}_{b a} & \boldsymbol{\Lambda}_{b b}
+  \end{array}\right]\right)
+\end{aligned}
+$$
+
+Marginalization and Conditioning operations on a gaussian distribution expresssed in convariance and information form.
+
+<p align="center">
+  <img src="../images/vins_mono/marginalization-condition.png" style="width:80%;"/>
+</p>
+
+# Marginalization in VINS-Mono
+
+## Two way marginalization
+
+* 当滑动窗口中第二新的图像帧为关键帧，则 marg 最老的帧,以及上面的路标点;
+* 当滑动窗口中第二新的图像帧不是关键帧,则丢弃这一帧上的视觉测量信息，IMU 预积分传给下一帧。
+
+<p align="center">
+  <img src="../images/vins_mono/marginalization.png"/>
+</p>
+
+## 数据结构
+
+<p align="center">
+  <img src="../images/vins_mono/vins_mono_marg_datastructure.png" style="width:100%;"/>
+</p>
+
+## 代码逻辑
+
+### addResidualBlockInfo
+
+```cpp
+factors.emplace_back(residual_block_info);
+
+std::vector<int> &drop_set = residual_block_info->drop_set;
+std::vector<double *> &parameter_blocks = residual_block_info->parameter_blocks;
+
+for (int i = 0; i < parameter_blocks.size(); i++) {
+    long addr = reinterpret_cast<long>(parameter_blocks[i]);
+    parameter_block_size[addr] =
+        residual_block_info->cost_function->parameter_block_sizes()[i];
+}
+
+for (int i = 0; i < drop_set.size(); i++) {
+    long addr = reinterpret_cast<long>(parameter_blocks[drop_set[i]]);
+    parameter_block_idx[addr] = 0;
+}
+```
+
+### preMarginalize
+
+```cpp
+for (auto it : factors) {
+    it->Evaluate(); // 利用多态性分别计算所有状态变量构成的残差和雅克比矩阵
+
+    std::vector<int> block_sizes = it->cost_function->parameter_block_sizes();
+
+    for (int i = 0; i < static_cast<int>(block_sizes.size()); i++) {
+        int size = block_sizes[i];
+        long addr = reinterpret_cast<long>(it->parameter_blocks[i]);
+        if (parameter_block_data.find(addr) == parameter_block_data.end()) {
+            double \*data = new double[size];
+            memcpy(data, it->parameter_blocks[i], sizeof(double) * size);
+            parameter_block_data[addr] = data;
+        }
+    }
+}
+```
+
+### marginalize
+
+<p align="center">
+  <img src="../images/vins_mono/schur_complement.png" style="width:90%;"/>
+</p>
+
+<p align="center">
+  <img src="../images/vins_mono/marg_update_prior_residual.png"/>
+</p>
+
+#### linearized_jacobians & linearized_residuals
+
+<p align="center">
+  <img src="../images/vins_mono/vins_mono_marg.jpg" style="width:100%;"/>
+</p>
+
+```cpp
+A = Arr - Arm * Amm_inv * Amr;
+b = brr - Arm * Amm_inv * bmm;
+
+Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> saes2(A);
+Eigen::VectorXd S     = Eigen::VectorXd((saes2.eigenvalues().array() > eps).select(saes2.eigenvalues().array(), 0));
+Eigen::VectorXd S_inv = Eigen::VectorXd((saes2.eigenvalues().array() > eps).select(saes2.eigenvalues().array().inverse(), 0));
+
+Eigen::VectorXd S_sqrt     =     S.cwiseSqrt();
+Eigen::VectorXd S_inv_sqrt = S_inv.cwiseSqrt();
+
+linearized_jacobians =     S_sqrt.asDiagonal() * saes2.eigenvectors().transpose();
+linearized_residuals = S_inv_sqrt.asDiagonal() * saes2.eigenvectors().transpose() * b;
+```
+
+### MarginalizationFactor::Evaluate
+
+```cpp
+int n = marginalization_info->n;
+int m = marginalization_info->m;
+
+Eigen::VectorXd dx(n);
+for (int i = 0; i < static_cast<int>(marginalization_info->keep_block_size.size()); i++) {
+    int size = marginalization_info->keep_block_size[i];
+    int idx  = marginalization_info->keep_block_idx[i] - m;
+    Eigen::VectorXd x  = Eigen::Map<const Eigen::VectorXd>(parameters[i], size);
+    Eigen::VectorXd x0 = Eigen::Map<const Eigen::VectorXd>(marginalization_info->keep_block_data[i], size);
+    if (size != 7)
+        dx.segment(idx, size) = x - x0;
+    else {
+        Eigen::Quaterniond q_tmp =
+            Eigen::Quaterniond(x0(6), x0(3), x0(4), x0(5)).inverse() * Eigen::Quaterniond(x(6), x(3), x(4), x(5));
+        dx.segment<3>(idx + 0) = x.head<3>() - x0.head<3>();
+        dx.segment<3>(idx + 3) = 2.0 * Utility::positify(q_tmp).vec();
+        if (!(q_tmp.w() >= 0)) {
+            dx.segment<3>(idx + 3) = 2.0 * -Utility::positify(q_tmp).vec();
+        }
+    }
+}
+
+Eigen::Map<Eigen::VectorXd>(residuals, n) =
+    marginalization_info->linearized_residuals + marginalization_info->linearized_jacobians * dx;
+
+if (jacobians) {
+    for (int i = 0; i < static_cast<int>(marginalization_info->keep_block_size.size()); i++) {
+        if (jacobians[i]) {
+            int size = marginalization_info->keep_block_size[i];
+            int local_size = marginalization_info->localSize(size);
+            int idx = marginalization_info->keep_block_idx[i] - m;
+            Eigen::Map<Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> jacobian(jacobians[i], n, size);
+            jacobian.setZero();
+            jacobian.leftCols(local_size) = marginalization_info->linearized_jacobians.middleCols(idx, local_size);
+        }
+    }
+}
+```
