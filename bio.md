@@ -28,7 +28,7 @@ key: page-bio
 
 * [Download Resume (PDF, zh)](http://gofile.me/5lGth/Dh3dvADvJ)
 
-* <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="assets/images/logo_orcid.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0003-2841-6617</a></div>
+* <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="assets/images/logo_orcid.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID: 0000-0003-2841-6617</a></div>
 
 * <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
 
@@ -45,13 +45,13 @@ key: page-bio
 
 ## Online Docs
 
-* SLAM Park: https://slam-park.readthedocs.io/zh/latest/
-* DevOps: https://devops-cg.readthedocs.io/zh_CN/latest/
+* [SLAM Park](https://slam-park.readthedocs.io/zh/latest/)
+* [DevOps](https://devops-cg.readthedocs.io/zh_CN/latest/)
 
 ## Slack Workspaces
 
-* AIPark: aipark.slack.com
-* AISLAM: aislam.slack.com
-* CVision: aicvision.slack.com
-* RoboticsCG: robotics-cg.slack.com
-* AIXR: aixr-cg.slack.com
+* [AIPark](aipark.slack.com)
+* [AISLAM](aislam.slack.com)
+* [CVision](aicvision.slack.com)
+* [RoboticsCG](robotics-cg.slack.com)
+* [AIXR](aixr-cg.slack.com)

@@ -36,18 +36,18 @@
       </li>
     {%- endif -%}
 
-    {%- if _author.twitter -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}">
-        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/{{ _author.twitter }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/twitter.svg -%}</div>
+    {%- if _author.linkedin -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Linkedin' }}">
+        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/{{ _author.linkedin }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/linkedin.svg -%}</div>
         </a>
       </li>
     {%- endif -%}
 
-    {%- if _author.weibo -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Weibo' }}">
-        <a class="button button--circle weibo-button" itemprop="sameAs" href="https://weibo.com/{{ _author.weibo }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/weibo.svg -%}</div>
+    {%- if _author.twitter -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}">
+        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/{{ _author.twitter }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/twitter.svg -%}</div>
         </a>
       </li>
     {%- endif -%}
@@ -76,30 +76,6 @@
       </li>
     {%- endif -%}
 
-    {%- if _author.zhihu -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Zhihu' }}">
-        <a class="button button--circle zhihu-button" itemprop="sameAs" href="https://www.zhihu.com/people/{{ _author.zhihu }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/zhihu.svg -%}</div>
-        </a>
-      </li>
-    {%- endif -%}
-
-    {%- if _author.douban -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Douban' }}">
-        <a class="button button--circle douban-button" itemprop="sameAs" href="https://www.douban.com/people/{{ _author.douban }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/douban.svg -%}</div>
-        </a>
-      </li>
-    {%- endif -%}
-
-    {%- if _author.linkedin -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Linkedin' }}">
-        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/{{ _author.linkedin }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/linkedin.svg -%}</div>
-        </a>
-      </li>
-    {%- endif -%}
-
     {%- if _author.github -%}
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'Github' }}">
         <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/{{ _author.github }}" target="_blank">
@@ -112,6 +88,30 @@
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'npm' }}">
         <a class="button button--circle npm-button" itemprop="sameAs" href="https://www.npmjs.com/~{{ _author.npm }}" target="_blank">
           <div class="icon">{%- include svg/icon/social/npm.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+    
+    {%- if _author.zhihu -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Zhihu' }}">
+        <a class="button button--circle zhihu-button" itemprop="sameAs" href="https://www.zhihu.com/people/{{ _author.zhihu }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/zhihu.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if _author.weibo -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Weibo' }}">
+        <a class="button button--circle weibo-button" itemprop="sameAs" href="https://weibo.com/{{ _author.weibo }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/weibo.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if _author.douban -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Douban' }}">
+        <a class="button button--circle douban-button" itemprop="sameAs" href="https://www.douban.com/people/{{ _author.douban }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/douban.svg -%}</div>
         </a>
       </li>
     {%- endif -%}
