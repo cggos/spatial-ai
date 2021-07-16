@@ -26,15 +26,17 @@ titles:
 key: page-bio
 ---
 
-* [Download Resume (PDF, zh)](http://gofile.me/5lGth/Dh3dvADvJ)
+* <a href="http://gofile.me/5lGth/Dh3dvADvJ"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">Download Resume (PDF, zh)</a>
 
 * <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="assets/images/logo_orcid.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID: 0000-0003-2841-6617</a></div>
 
 * <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
 
+* <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">CSDN Blog</a>
+
 ## Research Interests
 
-* Skills: CV, SLAM, VIO, MSF, Robotics, HPC
+* Skills: CV, SLAM, VIO, MSF, HPC
 * Fields: XR(AR, VR, MR), Robotics(Mobile Robot, Autonomous Driving, Drones)
 
 ## Presentations
@@ -55,3 +57,13 @@ key: page-bio
 * [CVision](aicvision.slack.com)
 * [RoboticsCG](robotics-cg.slack.com)
 * [AIXR](aixr-cg.slack.com)
+
+## Projects
+
+* [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X (GNSS, VO) Fusion Localization based on ESKF
+
+* [ ] **lsvo**: Line based Stereo Visual Odometry
+
+## Books
+
+* [ ] TODO
