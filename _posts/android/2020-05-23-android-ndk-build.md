@@ -10,26 +10,27 @@ key: android-ndk-build
 
 ## NDK Build
 
-Generate .so or .a files using NDK tools:
+Generate `.so` or `.a` files using NDK tools:
 
-1. Edit `.java` file
+1. Edit `.java` file;
 
-2. Generate header file for the java file using JDK tools `javac` and `javah`
+2. Generate header file for the java file using JDK tools `javac` and `javah`;
    ```sh
    # 在 `src` 目录下
    javac com/ndk/test/OpenCVTest.java
    javah -classpath ./ -jni com.ndk.test.OpenCVTest
    ```
 
-3. Edit `Android.mk` and `Application.mk` files
+3. Edit `Android.mk` and `Application.mk` files;
 
-4. Generate `.so` or `.a` files using command `ndk-build`  
+4. Generate `.so` or `.a` files using command `ndk-build`;
 
 5. Load the library and using its methods
 
 ### NDK Tips
 
-Android NDK 从2013年开始支持了C++11，从2015年开始支持C++14，在 `Android.mk` 中加入  
+Android NDK 从2013年开始支持了C++11，从2015年开始支持C++14，在 `Android.mk` 中加入
+
 ```sh
 # c++ 11 标准
 LOCAL_CPPFLAGS += -std=c++11
@@ -42,7 +43,7 @@ LOCAL_CPPFLAGS += -std=c++1y
 LOCAL_CPPFLAGS += -D__cplusplus=201300L
 ```
 
-When compiling c++ code with `-std=c++11` and using `gnustl_shared`, many **C99 math functions** are not provided by the <cmath> header as they should. At this time,`APP_STL := c++_static` may help.(from Issue: [C++11 cmath functions not in std namespace](https://stackoverflow.com/a/22924781/6560660))
+When compiling c++ code with `-std=c++11` and using `gnustl_shared`, many **C99 math functions** are not provided by the <cmath> header as they should. At this time, `APP_STL := c++_static` may help. (from Issue: [C++11 cmath functions not in std namespace](https://stackoverflow.com/a/22924781/6560660))
 
 
 ## Build Android Project
@@ -131,7 +132,6 @@ ndk-stack -sym <so文件所在路径> -dump 1.log
 
 * NDK logcat crash keywords
   > --------- beginning of crash
-
   > backtrace
 
 #### arm-linux-androideabi-addr2line
