@@ -1,7 +1,6 @@
 ---
 layout: article
-title:  "IMU概述"
-date:   2020-05-24
+title:  "IMU Overview"
 tags: INS
 key: imu-overview
 ---
@@ -54,4 +53,4 @@ key: imu-overview
 
 # IMU Errors
 
-* [IMU Errors and Rectification](https://cggos.github.io/ins/imu-errors.html)
+* [IMU Errors Analysis](https://cggos.github.io/imu-errors-analysis.html)

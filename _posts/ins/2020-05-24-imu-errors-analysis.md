@@ -1,7 +1,6 @@
 ---
 layout: article
-title:  "IMU误差分析"
-date:   2020-05-24
+title:  "IMU Errors Analysis"
 tags: INS
 key: imu-errors-analysis
 ---
