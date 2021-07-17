@@ -60,9 +60,39 @@ key: page-bio
 
 ## Projects
 
+* [ ] **lsvo**: Line based Stereo Visual Odometry
+
+* [ ] **slam_cg**
+
 * [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X (GNSS, VO) Fusion Localization based on ESKF
 
-* [ ] **lsvo**: Line based Stereo Visual Odometry
+* [x] **[rgbdslam_cg](https://github.com/cggos/rgbdslam_cg)**: 根据高翔博客《一起做RGB-D SLAM》，从零搭建 RGBD-SLAM
+
+* [x] **[msckf_stereo_c](https://github.com/cggos/msckf_stereo_c)**: Stereo MSCKF based on MSCKF_VIO without ROS and 3rd Parties like Eigen, OpenCV, PCL, etc.
+
+* [x] **[stereo_reconstruct_cg](https://github.com/cggos/stereo_reconstruct_cg)**: ROS Wrapper for Stereo Reconstruction, generate Depth Image and Point Cloud by left and right images from Stereo Binocular Camera
+
+* [x] **[vikit_cg](https://github.com/cggos/vikit_cg)**: ChenGuang Vision Kits
+
+* [x] **[cgocv](https://github.com/cggos/cgocv)**: ChenGuang Open Computer Vision class library
+
+* [x] **[ds_alg_cg](https://github.com/cggos/ds_alg_cg)**: Data Structures and Algorithms in C/C++
+
+* [x] **[cam_android](https://github.com/cggos/cam_android)**: An Android Camera Project using Java and Native C++
+
+* [x] **[ARDemoGL](https://github.com/cggos/ARDemoGL)**: AR Demo based on ROS and Pangolin
+
+* [x] **[DIPDemoQt](https://github.com/cggos/DIPDemoQt)**: Digital Image Processing Demos with OpenCV and Qt
+
+* [x] **[DIPDemoJava](https://github.com/cggos/DIPDemoJava)**: Digital Image Processing Demos with OpenCV2 and Java
+
+* [x] **[DIPDemoCSharp](https://github.com/cggos/DIPDemoCSharp)**: Digital Image Processing Demos with C#
+
+* [x] **[CardDemoQt](https://github.com/cggos/CardDemoQt)**: Card Management Demo with Qt5
+
+* [x] **[ZigBeeSCADA](https://github.com/cggos/ZigBeeSCADA)**: SCADA Software for Sending to and Receiving Datas from ZigBees to Monitoring and Controling ClassRooms' Devices
+
+* [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
 ## Books
 
