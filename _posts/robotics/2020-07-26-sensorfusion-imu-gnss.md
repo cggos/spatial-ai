@@ -77,17 +77,6 @@ $$
 \end{aligned}
 $$
 
-where
-
-$$
-\begin{array}{ll}
-\mathbf{V}_{\mathbf{i}}=\sigma_{\tilde{\mathbf{a}}_{n}}^{2} \Delta t^{2} \mathbf{I} & {\left[m^{2} / s^{2}\right]} \\
-\Theta_{\mathbf{i}}=\sigma_{\tilde{\boldsymbol{\omega}}_{n}}^{2} \Delta t^{2} \mathbf{I} & {\left[r a d^{2}\right]} \\
-\mathbf{A}_{\mathbf{i}}=\sigma_{\mathbf{a}_{w}}^{2} \Delta t \mathbf{I} & {\left[m^{2} / s^{4}\right]} \\
-\boldsymbol{\Omega}_{\mathbf{i}}=\sigma_{\boldsymbol{\omega}_{w}}^{2} \Delta t \mathbf{I} & {\left[r a d^{2} / s^{2}\right]}
-\end{array}
-$$
-
 ## The error-state Jacobian and perturbation matrices
 
 The error-state system is now
@@ -143,6 +132,17 @@ $$
 0 & 0 & \mathbf{A}_{\mathbf{i}} & 0 \\
 0 & 0 & 0 & \Omega_{\mathbf{i}}
 \end{array}\right]
+$$
+
+where
+
+$$
+\begin{array}{ll}
+\mathbf{V}_{\mathbf{i}}=\sigma_{\tilde{\mathbf{a}}_{n}}^{2} \Delta t^{2} \mathbf{I} & {\left[m^{2} / s^{2}\right]} \\
+\Theta_{\mathbf{i}}=\sigma_{\tilde{\boldsymbol{\omega}}_{n}}^{2} \Delta t^{2} \mathbf{I} & {\left[r a d^{2}\right]} \\
+\mathbf{A}_{\mathbf{i}}=\sigma_{\mathbf{a}_{w}}^{2} \Delta t \mathbf{I} & {\left[m^{2} / s^{4}\right]} \\
+\boldsymbol{\Omega}_{\mathbf{i}}=\sigma_{\boldsymbol{\omega}_{w}}^{2} \Delta t \mathbf{I} & {\left[r a d^{2} / s^{2}\right]}
+\end{array}
 $$
 
 
