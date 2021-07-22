@@ -32,7 +32,9 @@ key: page-bio
 
 * <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
 
-* <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">CSDN Blog</a>
+* <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN Blog</a>
+
+* <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园 Blog (most written in university)</a>
 
 ## Research Interests
 
