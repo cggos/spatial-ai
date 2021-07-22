@@ -2,7 +2,7 @@
 layout: bio
 titles:
   # @start locale config
-  en      : &EN       About
+  en      : &EN       Bio
   en-GB   : *EN
   en-US   : *EN
   en-CA   : *EN
@@ -34,7 +34,7 @@ key: page-bio
 
 * <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN Blog</a>
 
-* <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">cnblogs</a> (most written in university)
+* <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">cnblogs</a> (most written in university, deprecated)
 
 ## Research Interests
 
@@ -51,14 +51,6 @@ key: page-bio
 
 * [SLAM Park](https://slam-park.readthedocs.io/zh/latest/)
 * [DevOps](https://devops-cg.readthedocs.io/zh_CN/latest/)
-
-## Slack Workspaces
-
-* [AIPark](aipark.slack.com)
-* [AISLAM](aislam.slack.com)
-* [CVision](aicvision.slack.com)
-* [RoboticsCG](robotics-cg.slack.com)
-* [AIXR](aixr-cg.slack.com)
 
 ## Projects
 
@@ -95,6 +87,14 @@ key: page-bio
 * [x] **[ZigBeeSCADA](https://github.com/cggos/ZigBeeSCADA)**: SCADA Software for Sending to and Receiving Datas from ZigBees to Monitoring and Controling ClassRooms' Devices
 
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
+
+## Slack Workspaces
+
+* [AIPark](aipark.slack.com)
+* [AISLAM](aislam.slack.com)
+* [CVision](aicvision.slack.com)
+* [RoboticsCG](robotics-cg.slack.com)
+* [AIXR](aixr-cg.slack.com)
 
 ## Books
 
