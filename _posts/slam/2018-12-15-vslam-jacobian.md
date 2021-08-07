@@ -1,7 +1,6 @@
 ---
 layout: article
-title: "视觉SLAM位姿优化时误差函数雅克比矩阵的计算"
-date: 2018-12-15
+title: "vSLAM位姿优化中雅克比矩阵的求解"
 tags: SLAM
 key: vslam-jacobian
 ---
@@ -13,11 +12,13 @@ key: vslam-jacobian
 SLAM，即 **同时定位与建图**，视觉SLAM的 定位 即 求取相机位姿（旋转和平移 $[\mathbf{R} \quad \mathbf{t}]$）；在SLAM中，我们一般使用 **李代数 $\boldsymbol{\xi}$** 来表示 旋转和平移。  
 
 <p align="center">
-  <image src="../images/stereo_vision/epipolar_geometry.png">
+  <img src="../images/stereo_vision/epipolar_geometry.png"/>
 </p>
 
 * 记 相机内参矩阵 $\mathbf{K}$，相机位姿 $\mathbf{T} = [\mathbf{R} \quad \mathbf{t}]$ (or $\boldsymbol{\xi}$)
+
 * 记 $I_1$ 的图像坐标系下，一像素点 $\mathbf{p}(u,v)$；在 $O_1$ 相机坐标系下，其对应的 三维点 $\mathbf{P}(X,Y,Z)$
+
 * 记 $I_2$ 的图像坐标系下，一像素点 $\mathbf{p'}(u',v')$；在 $O_2$ 相机坐标系下，其对应的 三维点 $\mathbf{P'}(X',Y',Z')$，归一化坐标为$\mathbf{p'}_{norm}$
 
 $$
@@ -467,4 +468,5 @@ $$
 
 # 参考文献
 * [SLAM优化位姿时，误差函数的雅可比矩阵的推导](https://blog.csdn.net/zhubaohua_bupt/article/details/74011005)
+
 * 《视觉SLAM十四讲》
