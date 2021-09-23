@@ -9,13 +9,16 @@ key: hpc-overview
 
 # Overview
 
+* cggos
+  - [hpc](https://github.com/cggos/hpc)
+  - [multicore_gpu_programming](https://github.com/cggos/multicore_gpu_programming)
+
 * [StreamHPC](https://streamhpc.com/) is a software development company in parallel software for many-core processors.
 
 * [The Supercomputing Blog](http://supercomputingblog.com/)
 
 * [FastC++: Coding Cpp Efficiently](http://fastcpp.blogspot.com/)
 
-* [cggos/multicore_gpu_programming](https://github.com/cggos/multicore_gpu_programming)
 
 ## Heterogeneous Computing
 
