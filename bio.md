@@ -92,11 +92,11 @@ key: page-bio
 
 ## Slack Workspaces
 
-* [AIPark](aipark.slack.com)
-* [AISLAM](aislam.slack.com)
-* [CVision](aicvision.slack.com)
-* [RoboticsCG](robotics-cg.slack.com)
-* [AIXR](aixr-cg.slack.com)
+* [AIPark](https://aipark.slack.com/)
+* [AISLAM](https://aislam.slack.com)
+* [CVision](https://aicvision.slack.com)
+* [RoboticsCG](https://robotics-cg.slack.com)
+* [AIXR](https://aixr-cg.slack.com)
 
 ## Books
 
