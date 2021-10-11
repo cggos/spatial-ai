@@ -26,7 +26,9 @@ titles:
 key: page-bio
 ---
 
-* <a href="http://gofile.me/5lGth/Dh3dvADvJ"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">Download Resume (PDF, zh)</a>
+<!-- * <a href="http://gofile.me/5lGth/Dh3dvADvJ"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">Download Resume (PDF, zh)</a> -->
+
+* <a href="https://cggos.github.io/assets/HongchenGao-CV.pdf" target="_blank"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="PDF icon">Download Resume (PDF, zh)</a>
 
 * <a href="https://www.credly.com/users/cgabc"><img src="assets/images/logo_credly.png" style="width:1em;margin-right:.5em;" alt="Credly icon">Credly</a>
 
