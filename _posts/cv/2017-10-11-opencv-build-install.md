@@ -6,7 +6,7 @@ tags: ComputerVision
 key: opencv-build-install
 ---
 
-﻿[TOC]
+[TOC]
 
 # Overview
 
@@ -198,3 +198,17 @@ COMMON  += `pkg-config --cflags opencv-2.4.12`
     --extra_modules_path ../../../opencv_contrib-3.3.1/modules \
     build_cg ../..
   ```
+
+# Python
+
+```sh
+conda search -c https://conda.anaconda.org/menpo opencv*  # 搜索所有opencv版本
+
+conda install -c https://conda.anaconda.org/menpo opencv3 # 安装opencv3
+conda install -c https://conda.anaconda.org/menpo opencv  # 安装最新版opencv4
+
+# !!!!!!!!!!!!!!!!!!!
+conda install -c conda-forge opencv
+
+conda list opencv3 # 查看版本
+```
