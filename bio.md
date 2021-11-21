@@ -51,11 +51,6 @@ key: page-bio
 
 * Videos: [Bilibili](https://space.bilibili.com/158441969)
 
-## Online Docs
-
-* [SLAM Park](https://slam-park.readthedocs.io/zh/latest/)
-* [DevOps](https://devops-cg.readthedocs.io/zh_CN/latest/)
-
 ## Projects
 
 * [ ] **lsvo**: Line based Stereo Visual Odometry
