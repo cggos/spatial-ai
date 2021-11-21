@@ -20,13 +20,43 @@ With the tutorial of w3school, I studied technology of Front End,which is as fol
   - https://github.com/le4ker/personal-jekyll-theme
 * [github上利用jekyll搭建自己的blog的操作顺序？](https://www.zhihu.com/question/30018945?sort=created)
 
-### Install & Config on Ubuntu 16.04
+### Install & Config on Ubuntu
 
-* install ruby-dev: `sudo apt install ruby2.3-dev`
-* install ruby-bundler: `sudo gem install bundler`
-* generate or update **Gemfile**: delete **Gemfile.lock** and `bundle install`
-* install Jekyll: `sudo gem install jekyll -v=<version-num>`, its verison depends on **Gemfile.lock** in your project
-* run in your project dir: `jekyll serve` or `bundle exec jekyll serve`
+* Install all prerequisites (https://jekyllrb.com/docs/installation/ubuntu/)
+  ```sh
+  sudo apt-get install ruby-full build-essential zlib1g-dev
+
+  echo '# Install Ruby Gems to ~/tools/gems' >> ~/.bashrc
+  echo 'export GEM_HOME="$HOME/tools/gems"' >> ~/.bashrc
+  echo 'export PATH="$HOME/tools/gems/bin:$PATH"' >> ~/.bashrc
+  source ~/.bashrc
+  ```
+
+* Ruby 国内镜像源 (https://blog.hyperzsb.tech/ruby-mirror-source/)
+  ```sh
+  gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+  gem sources --clear-all
+  gem sources --update
+  gem sources -l
+  ```
+
+* Install the jekyll and bundler gems
+  ```sh
+  gem install jekyll bundler
+  ```
+
+* generate or update **Gemfile.lock**
+  ```sh
+  # delete Gemfile.lock
+  bundle install
+  ```
+
+* run in your project dir: 
+  ```sh
+  jekyll serve --no-watch
+  # or
+  bundle exec jekyll serve --no-watch
+  ```
 
 ### HOW TO RELEASE
 
