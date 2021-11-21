@@ -56,7 +56,7 @@ header:
     url: /projects/homepage.html
   
   - title: SLAMPark
-    url: * https://slam-park.readthedocs.io/zh/latest/
+    url: https://slam-park.readthedocs.io/zh/latest/
 
   - title: SciKit
     url: https://cggos.github.io/scikit
