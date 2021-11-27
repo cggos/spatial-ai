@@ -304,5 +304,6 @@ X' = T*K*(X - B)
 ## Accelerator
 
 <p align="center">
-  <img src="../images/ins/imutk_acc_corrected.png" style="width:100%"/>
+  <img src="../images/ins/imutk_acc_corrected_00.png" style="width:100%"/>
+  <img src="../images/ins/imutk_acc_corrected_01.png" style="width:100%"/>
 </p>
