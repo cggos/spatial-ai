@@ -201,6 +201,8 @@ COMMON  += `pkg-config --cflags opencv-2.4.12`
 
 # Python
 
+## with conda
+
 ```sh
 conda search -c https://conda.anaconda.org/menpo opencv*  # 搜索所有opencv版本
 
@@ -211,4 +213,10 @@ conda install -c https://conda.anaconda.org/menpo opencv  # 安装最新版openc
 conda install -c conda-forge opencv
 
 conda list opencv3 # 查看版本
+```
+
+## with pip
+
+```sh
+pip install opencv-python
 ```
