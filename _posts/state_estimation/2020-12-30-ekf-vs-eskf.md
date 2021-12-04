@@ -219,7 +219,26 @@ $$
 \hat{\mathbf{x}}_{k} =\hat{\mathbf{x}}_{k}^{-}+\delta \hat{\mathbf{x}}_{k}
 $$
 
+
+# Appendix
+
+## Kalman Filter Diagrams
+
+<p align="center">
+  <img src="../images/kalman_filter/kf_flow_00.jpg">
+</p>
+
+<p align="center">
+  <img src="../images/kalman_filter/kf_flow_02.png" style="width:100%;">
+</p>
+
+<p align="center">
+  <img src="../images/kalman_filter/kf_flow_01.png" style="width:100%;">
+</p>
+
+
 # Reference
 
 * [1] Extended Kalman Filter vs. Error State Kalman Filter for Aircraft Attitude Estimation
+
 * [2] Quaternion kinematics for the error-state Kalman filter
