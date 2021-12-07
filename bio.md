@@ -57,7 +57,7 @@ key: page-bio
 
 * [ ] **lsvo**: Line based Stereo Visual Odometry
 
-* [ ] **slam_cg**
+* [ ] **SLAM Kit**
 
 * [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X (GNSS, VO) Fusion Localization based on ESKF
 
@@ -91,11 +91,9 @@ key: page-bio
 
 ## Slack Workspaces
 
-* [AIPark](https://aipark.slack.com/)
+* [CG-SpatialAI](https://spatial-ai-3d.slack.com)
+* [CG-Metaverse](https://metaverse-ai.slack.com)
 * [AISLAM](https://aislam.slack.com)
-* [CVision](https://aicvision.slack.com)
-* [RoboticsCG](https://robotics-cg.slack.com)
-* [AIXR](https://aixr-cg.slack.com)
 
 ## Books
 
