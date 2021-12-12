@@ -1,7 +1,6 @@
 ---
 layout: article
-title:  "传感器融合：基于ESKF的IMU+GPS数据融合"
-date:   2020-07-26
+title:  "Multi-Sensor Fusion: IMU and GPS loose fusion based on ESKF"
 tags: Robotics MSF
 key: msf-eskf-imu-gps
 ---
@@ -12,7 +11,7 @@ key: msf-eskf-imu-gps
 
 # Overview
 
-* 代码：[imu_gnss_fusion](https://github.com/cggos/imu_gnss_fusion)
+* 代码：[imu_x_fusion](https://github.com/cggos/imu_x_fusion)
 
 <p align="center">
   <img src="../images/sensor_fusion/imu_gnss_fusion_rosgraph.jpg" style="width:90%;"/>

@@ -1,7 +1,6 @@
 ---
 layout: article
-title:  "传感器融合：基于EKF的Lidar与Radar数据融合"
-date:   2019-08-28
+title:  "Multi-Sensor Fusion: LiDAR and Radar fusion based on EKF"
 tags: Robotics MSF
 key: msf-ekf-lidar-radar
 ---
