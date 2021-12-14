@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "SLAM Data Structure"
+title: "Data Association in SLAM"
 tags: SLAM
-key: slam-data-structure
+key: slam-data-association
 ---
 
 [TOC]
