@@ -93,7 +93,6 @@ key: page-bio
 
 * [CG-SpatialAI](https://spatial-ai-3d.slack.com)
 * [CG-Metaverse](https://metaverse-ai.slack.com)
-* [AISLAM](https://aislam.slack.com)
 
 ## Books
 
