@@ -43,6 +43,11 @@ key: structurelight-3d-measurement
   - 相位测量轮廓术（PMP）
   - 彩色编码条纹投影法（CFP）
 
+## MEMS动态结构光
+
+<p align="center">
+  <img src="../images/structurelight_3dmeasurement/mems_structure_light.png" style="width:100%;"/>
+</p>
 
 # 基于PMP的结构光三维测量技术
 本文所讲的三维测量方法用的是主动三维测量中的 **相位测量轮廓术（PMP）**。  
