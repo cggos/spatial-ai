@@ -55,10 +55,6 @@ key: page-bio
 
 ## Projects
 
-* [ ] **lsvo**: Line based Stereo Visual Odometry
-
-* [ ] **SLAM Kit**
-
 * [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X (GNSS, VO) Fusion Localization based on ESKF
 
 * [x] **[rgbdslam_cg](https://github.com/cggos/rgbdslam_cg)**: 根据高翔博客《一起做RGB-D SLAM》，从零搭建 RGBD-SLAM
