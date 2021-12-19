@@ -8,7 +8,19 @@ key: pinhole-camera-model
 
 [TOC]
 
-# 世界坐标系 到 像素坐标系
+# 成像流水线
+
+<p align="center">
+  <img src="../images/camera_model/imaging_pipeline.jpg" style="width:60%;"/>
+</p>
+
+# 针孔相机模型
+
+相机将三维世界中的坐标点（单位：米）映射到二维图像平面（单位：像素）的过程能够用一个几何模型来描述，其中最简单的称为 **针孔相机模型 (pinhole camera model)** ，其框架如下图所示。
+
+<p align="center">
+  <img src="../images/camera_model/pinhole_camera_model.png">
+</p>
 
 世界坐标系中三维点 $M=[X,Y,Z]^T$ 和 像素坐标系中二维点 $m=[u,v]^T$ 的关系为：
 $$ s\tilde{m} = A [R \quad t] \tilde{M}$$
@@ -28,14 +40,6 @@ r_{11}&r_{12}&r_{13}&t_1\\r_{21}&r_{22}&r_{23}&t_2\\r_{31}&r_{32}&r_{33}&t_3
 $$  
 
 其中，$s$ 为缩放因子，$A$ 为相机的内参矩阵，$[R \quad t]$ 为相机的外参矩阵，$\tilde{m}$ 和 $\tilde{M}$ 分别为 $m$ 和 $M$ 对应的齐次坐标。
-
-# 针孔相机模型
-
-相机将三维世界中的坐标点（单位：米）映射到二维图像平面（单位：像素）的过程能够用一个几何模型来描述，其中最简单的称为 **针孔相机模型 (pinhole camera model)** ，其框架如下图所示。
-
-<p align="center">
-  <img src="../images/camera_model/pinhole_camera_model.png">
-</p>
 
 ## 世界坐标系 到 相机坐标系
 
@@ -164,12 +168,28 @@ f_x&0&c_x\\0&f_y&c_y\\0&0&1
 \end{aligned}
 $$
 
+### 主焦距 & 有效焦距
+
+<p align="center">
+  <img src="../images/camera_model/focal_efl_to_pixel.png" style="width:100%;"/>
+</p>
+
+<p align="center">
+  <img src="../images/camera_model/focal_main.png" style="width:100%;"/>
+</p>
+
 
 # 畸变模型
 
 ## 多项式畸变模型 (radial-tangential)
 
-透镜的畸变主要分为径向畸变和切向畸变。  
+透镜的畸变主要分为径向畸变和切向畸变。
+
+下图是距离光心不同距离上的点经过透镜 径向畸变 后点位的偏移示意图，距离光心越远，径向位移越大，表示畸变也越大，在光心附近，几乎没有偏移。
+
+<p align="center">
+  <img src="../images/camera_model/lens_distortion.png" style="width:80%;"/>
+</p>
 
 **径向畸变** 是由于透镜形状的制造工艺导致，且越向透镜边缘移动径向畸变越严重，实际情况中我们常用r=0处的泰勒级数展开的前几项来近似描述径向畸变，径向畸变后的归一化坐标为：
 
@@ -204,6 +224,8 @@ $$
 
 ## 畸变矫正
 
+### 整张图
+
 <p align="center">
   <img src="../images/camera_model/img_undistort.jpg">
 </p>
@@ -211,7 +233,7 @@ $$
 * [[图像]畸变校正详解](https://blog.csdn.net/humanking7/article/details/45037239)
 * 核心示例代码 (from [here](https://github.com/cggos/cgocv/blob/master/cv_core/include/cgocv/image.h#L153-L179))
 
-  ```c++
+  ```cpp
   for (int v = 0; v < height; v++) {
     for (int u = 0; u < width; u++) {
 
@@ -237,5 +259,53 @@ $$
       else
           img_dst(v, u) = 0;
     }
+  }
+  ```
+
+### 单点
+
+上面逆向过程 (`PinholeCamera::liftProjective()`)
+
+```cpp
+// Lift points to normalised plane
+mx_d = m_inv_K11 * p(0) + m_inv_K13;
+my_d = m_inv_K22 * p(1) + m_inv_K23;
+```
+
+- Apply Inverse distortion model
+    
+  ```cpp
+  // Apply inverse distortion model proposed by Heikkila
+  mx2_d = mx_d*mx_d;
+  my2_d = my_d*my_d;
+  mxy_d = mx_d*my_d;
+  rho2_d = mx2_d+my2_d;
+  rho4_d = rho2_d*rho2_d;
+  radDist_d = k1*rho2_d+k2*rho4_d;
+  Dx_d = mx_d*radDist_d + p2*(rho2_d+2*mx2_d) + 2*p1*mxy_d;
+  Dy_d = my_d*radDist_d + p1*(rho2_d+2*my2_d) + 2*p2*mxy_d;
+  inv_denom_d = 1/(1+4*k1*rho2_d+6*k2*rho4_d+8*p1*my_d+8*p2*mx_d);
+  
+  mx_u = mx_d - inv_denom_d*Dx_d;
+  my_u = my_d - inv_denom_d*Dy_d;
+  ```
+    
+- Recursive distortion model
+    
+  ```cpp
+  // Recursive distortion model
+  int n = 8;
+  Eigen::Vector2d d_u;
+  distortion(Eigen::Vector2d(mx_d, my_d), d_u);
+
+  // Approximate value
+  mx_u = mx_d - d_u(0);
+  my_u = my_d - d_u(1);
+  
+  for (int i = 1; i < n; ++i)
+  {
+      distortion(Eigen::Vector2d(mx_u, my_u), d_u);
+      mx_u = mx_d - d_u(0);
+      my_u = my_d - d_u(1);
   }
   ```
