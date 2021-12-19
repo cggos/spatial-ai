@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "双目立体视觉三维重建"
+title: "双目立体视觉原理"
 date: 2018-07-22
 tags: ComputerVision
 key: stereo-vision-reconstruct
@@ -234,7 +234,7 @@ So if you've chosen **disptype = CV_16S** during computation, you can access a p
 * [Disparity Map](http://www.jayrambhia.com/blog/disparity-mpas)
 * [Disparity map post-filtering](https://docs.opencv.org/3.1.0/d3/d14/tutorial_ximgproc_disparity_filtering.html)
 
-# 5. 三维重建
+# 5. 深度图
 
 （1）算法1：根据视差图，利用 $f'$ 和 $B$ 通过几何关系计算 **深度值**，并利用相机内参计算 **三维坐标**
 
@@ -315,10 +315,38 @@ $$
 \end{bmatrix}
 $$
 
+## 单目结构光相机(Kinect v1)
+
+<p align="center">
+  <img src="../images/structurelight_3dmeasurement/structure_light_mono.png" style="width:80%">
+</p>
+
+根据 相似三角形
+
+$$
+\frac{D}{b}=\frac{Z_{o}-Z_{k}}{Z_{o}}
+$$
+
+$$
+\frac{d}{f}=\frac{D}{Z_{k}}
+$$
+
+最终，得
+
+$$
+Z_{k}=\frac{Z_{o}}{1+\frac{Z_{o}}{f b} d}
+$$
+
 ## 深度图 图像类型
 
 * 单位meter --> 32FC1
 * 单位millimeter --> 16UC1
+
+# 6. 深度图与RGB图像的配准
+
+<p align="center">
+  <img src="../images/structurelight_3dmeasurement/register_depth_rgb.png" style="width:100%">
+</p>
 
 # 总结
 
