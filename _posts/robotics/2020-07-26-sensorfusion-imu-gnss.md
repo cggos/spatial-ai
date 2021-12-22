@@ -105,7 +105,7 @@ $$
 \left[\begin{array}{ccccc}
 \mathbf{I} & \mathbf{I} \Delta t & 0 & 0 & 0 \\
 0 & \mathbf{I} & -\mathbf{R}\left[\mathbf{a}_{m}-\mathbf{a}_{b}\right]_{\times} \Delta t & -\mathbf{R} \Delta t & 0  \\
-0 & 0 & \mathbf{R}^{\top}\left\{\left(\boldsymbol{\omega}_{m}-\boldsymbol{\omega}_{b}\right) \Delta t\right\} & 0 & \mathbf{I} \Delta t \\
+0 & 0 & \mathbf{R}^{\top}\left\{\left(\boldsymbol{\omega}_{m}-\boldsymbol{\omega}_{b}\right) \Delta t\right\} & 0 & - \mathbf{I} \Delta t \\
 0 & 0 & 0 & \mathbf{I} & 0 \\
 0 & 0 & 0 & 0 & \mathbf{I}
 \end{array}\right]
