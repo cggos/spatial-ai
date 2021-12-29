@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "IMU and VO Loose Fusion based on ESKF"
+title:  "Multi-Sensor Fusion: IMU and VO Loose Fusion based on ESKF"
 tags: Robotics MSF
 key: msf-eskf-imu-stereo-visual-odometry
 ---
