@@ -99,23 +99,23 @@ $$
 根据 贝叶斯法则， **后验 = 似然 x 先验**
 
 $$
-\begin{align}
+\begin{aligned}
 \underbrace{P(X \mid Z)}_{posterior} 
 =& \frac{P(X, Z)}{P(Z)}  \\
 =& \frac{P(Z \mid X) P(X)}{P(Z)} \\
 \propto& \underbrace{P(Z \mid X)}_{likehood} \underbrace{P(X)}_{prior}
-\end{align}
+\end{aligned}
 $$
 
 解决上述系统的状态估计问题，就是求X的最优估计使得 **最大后验概率(MAP)**，即求 **最大似然估计(MLE)**
 
 $$
-\begin{align}
+\begin{aligned}
 X^* 
 =& \arg \max_X P(X \mid Z) \\
 =& \arg \max_X P(Z \mid X) P(X) \\
 =& \arg \max_X P(Z \mid X) \\
-\end{align}
+\end{aligned}
 $$
 
 根据 **多元高斯分布** 的 概率密度函数 为
@@ -150,7 +150,7 @@ $$
 因此，在 **MLE 和 高斯分布** 的假设下，我们可以得到 **最小二乘问题(OLS)**
 
 $$
-\begin{align}
+\begin{aligned}
 X^* 
 =& \arg \min_X - \log \left( P(z \mid x) \right) \\
 =& \arg \min_X \frac{1}{2} (z-f(x))^{T} {\Sigma}^{-1} (z-f(x)) \\
@@ -158,7 +158,7 @@ X^*
 =& \arg \min_X \frac{1}{2} \| z - f(x_{op}) - J \Delta_{op} \|^2_{\Sigma} \\
 =& \arg \min_X \frac{1}{2} \| J \Delta_{op} - (z - f(x_{op})) \|^2_{\Sigma} \\
 =& \arg \min_X \frac{1}{2} \| r(x) \|^2_{\Sigma}
-\end{align}
+\end{aligned}
 $$
 
 从而， G-N正规方程为
