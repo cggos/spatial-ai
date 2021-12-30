@@ -51,15 +51,15 @@ header:
 
   - title: Bio
     url: /bio.html
-
-  - title: WebDemo
-    url: /projects/homepage.html
   
   - title: SLAMKit
-    url: https://slamkit.readthedocs.io/
+    url: https://slamkit.readthedocs.io
 
   - title: SciKit
     url: https://cggos.github.io/scikit
 
   - title: DevOps
     url: https://cggos.github.io/DevOps
+    
+  - title: WebDemo
+    url: /projects/homepage.html
