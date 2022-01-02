@@ -266,7 +266,7 @@ z = H x^{\prime} + \omega
 \omega \sim N(0,R)
 $$
 
-则 **Measurement Jacobian Matrix**
+上式中的状态转移矩阵H，也即 **Measurement Jacobian Matrix**
 
 $$
 H =
@@ -298,33 +298,21 @@ z =
 \left(\begin{array}{l}
 {\rho} \\ {\varphi} \\ {\dot{\rho}}
 \end{array}\right) =
-h(x^{\prime}) =
+h(x^{\prime}) + \omega =
 \left(\begin{array}{c}
 {\sqrt{p_{x}^{\prime 2}+p_{y}^{\prime 2}}} \\
 {\arctan \left(p_{y}^{\prime} / p_{x}^{\prime}\right)} \\
 {\frac{p_{x}^{\prime} v_{x}^{\prime}+p_{y} v_{y}^{\prime}}{\sqrt{p_{x}^{\prime 2}+p_{y}^{\prime 2}}}}
-\end{array}\right)
+\end{array}\right) + \omega
+\quad s.t. \quad
+\omega \sim N(0,R)
 $$
 
 * range $\rho$: the radial distance from the origin to our pedestrian
 * bearing $\varphi$: the angle between the ray and x direction
 * range rate $\dot{\rho}$: known as Doppler or radial velocity is the velocity along this ray
 
-通过一阶泰勒展开将 $h(x^{\prime})$ 在 $\mu = 0$ 处线性化
-
-$$
-h(x^{\prime}) = H x^{\prime}
-$$
-
-简写为
-
-$$
-z = H x^{\prime} + \omega
-\quad s.t. \quad
-\omega \sim N(0,R)
-$$
-
-其中，**Measurement Jacobian Matrix**
+**Measurement Jacobian Matrix**
 
 $$
 H =
