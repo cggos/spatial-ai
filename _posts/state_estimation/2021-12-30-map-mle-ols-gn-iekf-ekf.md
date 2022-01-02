@@ -28,7 +28,7 @@ y_{k} = h(x_k) + w,  \quad w \sim \mathcal{N}(0, R)
 \end{cases}
 $$
 
-在工作点附近线性化
+在工作点附近线性化 (在此不考虑状态预测，将状态先验定义为预测后的值)
 
 $$
 \begin{cases}
@@ -161,16 +161,25 @@ X^*
 \end{aligned}
 $$
 
-从而， G-N正规方程为
+# OLS $\rightarrow$ Gauss-Newton
+
+根据以上最小二乘问题， 我们可以得到G-N正规方程为
 
 $$
-(J^T \Sigma^{-1} J)^{-1} \Delta_{op} = J^T \Sigma^{-1} r_{op}
+(J^T \Sigma^{-1} J) \Delta_{op} = J^T \Sigma^{-1} r_{op}
+$$
+
+从而，状态增量
+
+$$
+\Delta_{op} = (J^T \Sigma^{-1} J)^{-1} J^T \Sigma^{-1} r_{op}
 $$
 
 另外，对于 **加权最小二乘**，上式中的 $\Sigma^{-1}$ (**信息矩阵**，协方差的逆)，就是 **权重矩阵** $W$；方差越大，权重越小。
 
-# OLS $\rightarrow$ EKF(update P)
+# Gauss-Newton $\rightarrow$ EKF(update P)
 
+<!-- 
 对上述系统的 **预测残差**
 
 $$
@@ -184,12 +193,32 @@ $$
 \end{aligned}
 $$
 
-所以，**后验 协方差矩阵**
+$$
+\begin{aligned}
+\Sigma 
+=& E(r_{op} r_{op}^T) \\
+=& E( (r_{op}^T r_{op})^T ) \\
+=& E( (\Delta x_{op,k}^T (J_k^T \Sigma^{-1} J_k) \Delta x_{op,k})^T ) \\
+=& E( \Delta x_{op,k} (J_k^T \Sigma^{-1} J_k) \Delta x_{op,k}^T )
+\end{aligned}
+$$ 
+
+-->
+
+**后验 协方差矩阵**
 
 $$
 \begin{aligned}
 P_k^+ 
 =& E[(x_k^+ - x_{op,k})(x_k^+ - x_{op,k})^T] \\
+=& E(\Delta_{op} \Delta_{op}^T) \\
+=& E(
+  (J^T \Sigma^{-1} J)^{-1} J^T \Sigma^{-1} r_{op} 
+  r_{op}^T \Sigma^{-T} J (J^T \Sigma^{-1} J)^{-T}) \\
+=& 
+  (J^T \Sigma^{-1} J)^{-1} J^T \Sigma^{-1} 
+  E(r_{op} r_{op}^T)
+  \Sigma^{-1} J J^{-1} \Sigma J^{-T} \\  
 =& \left(
   {\color{blue}{J_k^T \Sigma_k^{-1} J_k}}
 \right)^{-1} \\
@@ -225,12 +254,6 @@ $$
 
 
 # Gauss-Newton $\rightarrow$ IEKF $\rightarrow$ EKF(update X)
-
-根据上述系统G-N正规方程，状态增量为
-
-$$
-\Delta_{op} = (J^T \Sigma^{-1} J)^{-1} J^T \Sigma^{-1} r_{op}
-$$
 
 根据 先验，我们从 **高斯-牛顿** 出发，推导 **IEKF的后验估计状态更新方式** (以下 $x_i = x_{op,i}$)
 
