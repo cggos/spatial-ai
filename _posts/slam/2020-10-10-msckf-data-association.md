@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Data Association in SLAM"
+title: "Data Association in MSCKF"
 tags: SLAM
-key: slam-data-association
+key: msckf-data-association
 ---
 
 [TOC]
