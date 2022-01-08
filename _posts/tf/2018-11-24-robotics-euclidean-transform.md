@@ -1,7 +1,6 @@
 ---
 layout: article
 title:  "3D欧式变换理论与实践"
-date:   2018-11-24
 tags: TF
 key: robotics-euclidean-transform
 ---
@@ -233,6 +232,10 @@ $$
 
 
 ## 李群和李代数
+
+<p align="center">
+  <img src="../images/3d_transform/se3_so3.png" style="width:100%;"/>
+</p>
 
 ### 特殊正交群 $SO(3)$
 
