@@ -283,20 +283,6 @@ $$
 
 * <a href="#coordinate_handle_rules">坐标系手性</a>
 
-### 注意 同一刚体中不同坐标系姿态变换的相互表示
-
-以带有IMU的相机模组为例，已知 IMU（坐标系）本身的姿态变换 $\mathbf{T}^{B}$ 和 同一模组中Camera到IMU(Body)的坐标系变换 $\mathbf{T}_{BC}$，则 该Camera（坐标系）本身的姿态变换为：  
-
-$$
-{}_C\mathbf{T} = \mathbf{T}_{BC} \cdot \mathbf{T}^{B} \cdot \mathbf{T}_{BC}^{-1}
-$$
-
-因为上面的变换都是 **坐标系的变换**，所以矩阵相乘 从左到右，即 **矩阵右乘**
-
-<p align="center">
-  <img src="../images/3d_transform/pointcloud_imu.jpg"/>
-</p>
-
 
 # 编程库实践
 
