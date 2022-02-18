@@ -42,6 +42,8 @@ key: page-bio
 
 * <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">cnblogs</a> (most written in university, deprecated)
 
+* <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a>
+
 ## Research Interests
 
 * Skills: CV, SLAM, VIO, MSF, HPC
