@@ -7,7 +7,7 @@ key: robotics-euclidean-transform
 
 [TOC]
 
-# 理论基础
+# Overview
 
 三维空间中的变换主要分为如下几种：
 
@@ -24,7 +24,7 @@ key: robotics-euclidean-transform
 
 本文主要介绍欧式变换。
 
-## 欧式变换
+# 欧式变换
 
 $$
 \mathbf{T} =
@@ -51,187 +51,7 @@ P_c &= \mathbf{T} \cdot P_w \\
 \end{aligned}
 $$
 
-### 旋转
-
-#### 旋转矩阵
-
-$$
-\mathbf{R} =  
-\begin{bmatrix}
-r_{11} & r_{12} & r_{13} \\  
-r_{21} & r_{22} & r_{23} \\
-r_{31} & r_{32} & r_{33}
-\end{bmatrix}
-\in \mathbb{R}^{3 \times 3},
-\quad s.t. \quad \mathbf{RR}^T = \mathbf{I}, det(\mathbf{R}) = 1
-$$
-
-#### 旋转向量（轴角）
-
-$$
-\boldsymbol{\phi} = \alpha\mathbf{a} = log(\mathbf{R})^{\vee} \in \mathbb{R}^3
-$$
-
-* **旋转轴**：矩阵 $\mathbf{R}$ 特征值1对应的特征向量（单位矢量）
-$$
-\mathbf{a} = \frac{\boldsymbol{\phi}}{||\boldsymbol{\phi}||} \in \mathbb{R}^3
-$$
-
-* **旋转角**
-$$
-\alpha = ||\boldsymbol{\phi}|| = arccos(\frac{tr(\mathbf{R})-1}{2}) \in \mathbb{R}
-$$
-
-罗德里格斯公式（[Rodrigues' rotation formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula)）：
-$$
-\mathbf{R} = cos\alpha \mathbf{I} + (1-cos\alpha) \mathbf{aa}^T + sin\alpha \mathbf{a}^{\wedge}
-$$
-
-#### 单位四元数
-
-**2D旋转**：**单位复数** 可用来表示2D旋转。  
-
-$$
-z = a + b\vec{i} = r ( cos\theta + sin\theta\vec{i} ) = e^{\theta \vec{i}}, r = ||z||=1
-$$
-
-**3D旋转**：**单位四元数** 才可表示3D旋转，四元数是复数的扩充，在表示旋转前需要进行 **归一化**。
-
-$$
-\mathbf{q} = \begin{bmatrix} \boldsymbol\varepsilon \\ \eta \end{bmatrix}
-\quad s.t. \quad
-||\mathbf{q}||_2 = 1
-$$
-
-where
-
-$$
-\eta = cos\frac{\alpha}{2}, \quad
-\boldsymbol\varepsilon = \mathbf{a} sin\frac{\alpha}{2} =
-\begin{bmatrix}
-a_1sin \frac{\alpha}{2} \\ a_2sin \frac{\alpha}{2} \\ a_3sin \frac{\alpha}{2}
-\end{bmatrix} =
-\begin{bmatrix} \varepsilon_1 \\ \varepsilon_2 \\ \varepsilon_3 \end{bmatrix}
-$$
-
-and
-
-$$
-||\mathbf{a}||_2 = 1, \quad
-\eta^2 + \varepsilon_1^2 + \varepsilon_2^2 + \varepsilon_3^2 = 1
-$$
-
-即
-
-$$
-\mathbf{q}
-= \begin{bmatrix} \mathbf{a} sin\frac{\alpha}{2} \\ cos\frac{\alpha}{2}\end{bmatrix}
-$$
-
-当 $\alpha$ 很小时，可以近似表达为
-
-$$
-\mathbf{q}
-\approx \begin{bmatrix} \mathbf{a} \frac{\alpha}{2} \\ 1 \end{bmatrix}
-= \begin{bmatrix} \frac{\boldsymbol{\phi}}{2} \\ 1 \end{bmatrix}
-$$
-
-四元数可以在 **保证效率** 的同时，减小矩阵1/4的内存占有量，同时又能 **避免欧拉角的万向锁问题**。
-
-#### 欧拉角
-旋转矩阵可以可以分解为绕各自轴对应旋转矩阵的乘积：
-
-$$
-\mathbf{R} = \mathbf{R}_1 \mathbf{R}_2 \mathbf{R}_3
-$$
-
-根据绕轴的不同，欧拉角共分为两大类，共12种，如下图（基于 **右手系**）所示：
-
-<p align="center">
-  <img src="../images/3d_transform/euler_angles_12.jpg"/>
-</p>
-
-<a name="is_fixed_axis"></a>
-
-以上不同旋转轴合成的旋转矩阵，每一种都可以看成 **同一旋转矩阵的两种不同物理变换**：
-
-* 绕 **固定轴** 旋转
-* 绕 **动轴** 旋转
-
-以 **$Z_1Y_2X_3$** 进行为例，旋转矩阵表示为 $\mathbf{R} = \mathbf{R}_z \mathbf{R}_y \mathbf{R}_x$，说明：
-
-* 绕 **固定轴** 旋转：以初始坐标系作为固定坐标系，**分别先后绕固定坐标系的X、Y、Z轴** 旋转；
-
-* 绕 **动轴** 旋转：先绕 **初始Z轴** 旋转，再绕 **变换后的Y轴** 旋转，最后绕 **变换后的X轴** 旋转
-
-即 绕 **固定坐标轴的XYZ** 和 **绕运动坐标轴的ZYX** 的旋转矩阵是一样的。
-
-我们经常用的欧拉角一般就是 **$Z_1Y_2X_3$** 轴序的 **yaw-pitch-roll**，如下图所示：  
-
-<p align="center">
-  <img src="../images/3d_transform/rpy_plane.png"/>
-</p>
-
-对应的旋转矩阵为  
-
-$$
-\mathbf{R} = \mathbf{R}_z \mathbf{R}_y \mathbf{R}_x = \mathbf{R}(\theta_{yaw}) \mathbf{R}(\theta_{pitch}) \mathbf{R}(\theta_{roll})
-$$
-
-其逆矩阵为：  
-
-$$
-\begin{aligned}
-\mathbf{R}^{-1}
-&= (\mathbf{R}_z \mathbf{R}_y \mathbf{R}_x)^{-1} \\
-&= \mathbf{R}_x^{-1} \mathbf{R}_y^{-1} \mathbf{R}_z^{-1} \\
-&= \mathbf{R}(-\theta_{roll}) \mathbf{R}(-\theta_{pitch}) \mathbf{R}(-\theta_{yaw})
-\end{aligned}
-$$
-
-上面 $\mathbf{R}_x \mathbf{R}_y \mathbf{R}_z$ 以 **Cosine Matrix** 的形式表示为（**右手系**）：
-
-$$
-\mathbf{R}_x(\theta) =
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & cos(\theta) & -sin(\theta) \\
-0 & sin(\theta) &  cos(\theta)
-\end{bmatrix}
-$$
-
-$$
-\mathbf{R}_y(\theta) =
-\begin{bmatrix}
- cos(\theta) & 0 & sin(\theta) \\
-0 & 1 & 0 \\
--sin(\theta) & 0 & cos(\theta)
-\end{bmatrix}
-$$
-
-$$
-\mathbf{R}_z(\theta) =
-\begin{bmatrix}
-cos(\theta) & -sin(\theta) & 0 \\
-sin(\theta) &  cos(\theta) & 0 \\
-0 & 0 & 1
-\end{bmatrix}
-$$
-
-#### 旋转转换
-
-* [Maths - Rotation conversions](https://www.euclideanspace.com/maths/geometry/rotations/conversions/index.htm)
-
-* [ptam_cg/src/Tools.cc](https://github.com/cggos/ptam_cg/blob/master/src/Tools.cc)
-
-### 平移
-
-$$
-\mathbf{t} = \begin{bmatrix} x & y & z \end{bmatrix}^T \in \mathbb{R}^3
-$$
-
-
-## <a name="coordinate_handle_rules">坐标系手性</a>
+# <a name="coordinate_handle_rules">坐标系手性</a>
 
 坐标系的手性主要分为 **右手系** 和 **左手系**，主要通过以下两种方法区分（右手系）：
 
@@ -254,9 +74,9 @@ $$
 * Unity3D: 左手系
 * ROS tf: 右手系
 
-## 注意事项
+# 注意事项
 
-### 区分 点的变换 和 坐标系本身的变换
+## 区分 点的变换 和 坐标系本身的变换
 
 $$
 P_a = \mathbf{T}_{AB} \cdot P_b
@@ -275,11 +95,11 @@ $$
 * **点的变换**：矩阵相乘 从右到左，即 **矩阵左乘**
 * **坐标系的变换**：矩阵相乘 从左到右，即 **矩阵右乘**
 
-### 区分 绕定轴旋转 和 绕动轴旋转
+## 区分 绕定轴旋转 和 绕动轴旋转
 
 * <a href="#is_fixed_axis">绕定轴旋转 和 绕动轴旋转</a>
 
-### 注意 右手系 和 左手系
+## 注意 右手系 和 左手系
 
 * <a href="#coordinate_handle_rules">坐标系手性</a>
 

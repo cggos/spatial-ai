@@ -17,6 +17,18 @@ key: lie-group-lie-algebra-so3-se3
   <img src="../images/3d_transform/se3_so3.png" style="width:100%;"/>
 </p>
 
+## Matrix Exponential & Logarithm
+
+已知 $A \in \mathbb{R}^{M \times M}$,
+
+$$
+\exp (\mathbf{A})=\mathbf{1}+\mathbf{A}+\frac{1}{2 !} \mathbf{A}^{2}+\frac{1}{3 !} \mathbf{A}^{3}+\cdots=\sum_{n=0}^{\infty} \frac{1}{n !} \mathbf{A}^{n}
+$$
+
+$$
+\ln (\mathbf{A})=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}(\mathbf{A}-\mathbf{1})^{n}
+$$
+
 # SO3
 
 ## 特殊正交群 $SO(3)$
@@ -53,9 +65,29 @@ $$
 \in \mathbb{R}^{3 \times 3}
 $$
 
-指数映射：$\mathbf{R} = exp(\boldsymbol{\phi}^{\wedge}) {\approx} \mathbf{I} + \boldsymbol{\phi}^{\wedge}$ (first-order approximation)  
+## 映射
 
-对数映射：$\boldsymbol{\phi} = log(\mathbf{R})^{\vee}$
+### 指数映射
+
+$$
+\begin{aligned}
+\mathbf{R} 
+&= \exp(\boldsymbol{\phi}^{\wedge}) \\
+&= \mathbf{I} + \boldsymbol{\phi}^{\wedge} \mathbf{J}
+\end{aligned}
+$$
+
+当 $\|\phi\|$ 比较小时，一阶泰勒近似
+
+$$
+\mathbf{R} \approx \mathbf{I} + \boldsymbol{\phi}^{\wedge}
+$$
+
+### 对数映射
+
+$$
+\boldsymbol{\phi} = \log(\mathbf{R})^{\vee}
+$$
 
 # SE3
 
@@ -96,8 +128,25 @@ $$
 \boldsymbol{\rho},\boldsymbol{\phi} \in \mathbb{R}^3
 $$
 
-指数映射：$\mathbf{T} = exp(\boldsymbol{\xi}^{\wedge})$  
-对数映射：$\boldsymbol{\xi} = log(\mathbf{T})^{\vee}$
+另外，
+
+$$
+\mathbf{t}=\mathbf{J} \boldsymbol{\rho} \in \mathbb{R}^{3}, \quad \mathbf{J}=\sum_{n=0}^{\infty} \frac{1}{(n+1) !}\left(\phi^{\wedge}\right)^{n}
+$$
+
+## 映射
+
+### 指数映射
+
+$$
+\mathbf{T} = \exp(\boldsymbol{\xi}^{\wedge})
+$$  
+
+## 对数映射
+
+$$
+\boldsymbol{\xi} = \log(\mathbf{T})^{\vee}
+$$
 
 
 # Adjoint of Lie Group
@@ -140,7 +189,7 @@ vec_w2 :     6.3204     5.78107     30.7615   -0.785398 1.74393e-16           0
 vec_b_adj :  6.3204     5.78107     30.7615   -0.785398 1.74393e-16           0
 ```
 
-## adjoint action of SE(3)
+## Adjoint action of SE(3)
 
 * https://gtsam.org/2021/02/23/uncertainties-part3.html
 
@@ -167,3 +216,27 @@ $$
 <p align="center">
   <img src="../images/3d_transform/pointcloud_imu.jpg"/>
 </p>
+
+## Properties
+
+$$
+R \phi^{\wedge} R^T = (R \phi)^{\wedge}
+$$
+
+# Baker-Campbell-Hausdorff (BCH)
+
+$$
+\begin{aligned}
+\ln \left(\mathbf{C}_{1} \mathbf{C}_{2}\right)^{\vee}=\ln (\exp (&\left.\left.\phi_{1}^{\wedge}\right) \exp \left(\phi_{2}^{\wedge}\right)\right)^{\vee} \\
+& \approx\left\{\begin{array}{ll}
+\mathbf{J}_{\ell}\left(\phi_{2}\right)^{-1} \phi_{1}+\phi_{2} & \text { if } \phi_{1} \text { small } \\
+\phi_{1}+\mathbf{J}_{r}\left(\phi_{1}\right)^{-1} \phi_{2} & \text { if } \phi_{2} \text { small }
+\end{array},\right.
+\end{aligned}
+$$
+
+In Lie group theory, $J_r$ and $J_l$ are referred to as **the right and left Jacobians of $SO(3)$**, respectively.
+
+## SO(3) 左右雅克比矩阵
+
+* [四元数矩阵与 so(3) 左右雅可比](https://fzheng.me/2018/05/22/quaternion-matrix-so3-jacobians/)

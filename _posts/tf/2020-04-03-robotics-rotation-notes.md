@@ -8,55 +8,186 @@ key: robotics-rotation-abc
 
 [TOC]
 
+# Overview
+
+* 旋转转换
+
+  * [Maths - Rotation conversions](https://www.euclideanspace.com/maths/geometry/rotations/conversions/index.htm)
+
+  * [ptam_cg/src/Tools.cc](https://github.com/cggos/ptam_cg/blob/master/src/Tools.cc)
+
 # 旋转表示
 
-## euler angle
-
-## rotation vector
+## 旋转矩阵 (Rotation Matrix)
 
 $$
-\boldsymbol \phi = \mathbf{u} \theta
+\mathbf{R} =  
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\  
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
+\in \mathbb{R}^{3 \times 3},
+\quad s.t. \quad \mathbf{RR}^T = \mathbf{I}, \det(\mathbf{R}) = 1
 $$
 
-## rotation matrix
-
-$$
-R = \exp({\boldsymbol \phi^{\wedge}})
-$$
-
-## SO3 Lie Group & Lie Algebra
+## Lie Group & Lie Algebra
 
 $$
 R = \exp({\boldsymbol \phi^{\wedge}}) \in SO3
 $$
 
-## rotation(unit) quarternion
+## 旋转向量/轴角 (Rotation Vector)
 
 $$
-\mathbf{q}
-= \exp(\frac{\boldsymbol \phi}{2})
-= \cos(\frac{\theta}{2}) + \mathbf{u} \sin(\frac{\theta}{2})
+\boldsymbol{\phi} 
+= \mathbf{u} \theta 
+= \log(\mathbf{R})^{\vee} 
+\in \mathbb{R}^3
 $$
+
+* **旋转轴**：矩阵 $\mathbf{R}$ 特征值1对应的特征向量（单位矢量）
+$$
+\mathbf{u} = \frac{\boldsymbol{\phi}}{||\boldsymbol{\phi}||} \in \mathbb{R}^3
+$$
+
+* **旋转角**
+$$
+\theta = ||\boldsymbol{\phi}|| = \arccos \left(\frac{tr(\mathbf{R})-1}{2} \right) \in \mathbb{R}
+$$
+
+旋转向量与旋转矩阵的转换，**罗德里格斯公式**（[Rodrigues' rotation formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula)）：
+
+$$
+\mathbf{R} = \cos \theta \mathbf{I} + (1-\cos \theta) \mathbf{uu}^T + \sin \theta \mathbf{u}^{\wedge}
+$$
+
+## 单位四元数 (Rotation/Unit Quarternion)
 
 $$
 R = C(q) \longrightarrow R^T = C(q^{-1})
 $$
 
+**2D旋转**：**单位复数** 可用来表示2D旋转。  
+
+$$
+z = a + b\vec{i} = r (\cos \theta + \sin \theta \vec{i} ) = e^{\theta \vec{i}}, 
+\quad r = ||z||=1
+$$
+
+**3D旋转**：**单位四元数** 才可表示3D旋转，四元数是复数的扩充，在表示旋转前需要进行 **归一化**。
+
+$$
+\mathbf{q}
+= \exp(\frac{\boldsymbol \phi}{2})
+= \exp \left( \frac{\mathbf{u} \theta}{2} \right)
+= \cos \frac{\theta}{2} + \mathbf{u} \sin \frac{\theta}{2}
+= \begin{bmatrix} \cos \frac{\theta}{2} \\ \mathbf{u} \sin \frac{\theta}{2} \end{bmatrix}
+\quad s.t. \quad
+||\mathbf{q}||_2 = 1
+$$
+
+当 $\theta$ 很小时，可以近似表达为
+
+$$
+\mathbf{q}
+\approx \begin{bmatrix} 1 \\ \frac{\boldsymbol{\phi}}{2} \end{bmatrix}
+$$
+
+四元数可以在 **保证效率** 的同时，减小矩阵1/4的内存占有量，同时又能 **避免欧拉角的万向锁问题**。
+
+## 欧拉角 (Euler Angle)
+
+旋转矩阵可以可以分解为绕各自轴对应旋转矩阵的乘积：
+
+$$
+\mathbf{R} = \mathbf{R}_1 \mathbf{R}_2 \mathbf{R}_3
+$$
+
+根据绕轴的不同，欧拉角共分为两大类，共12种，如下图（基于 **右手系**）所示：
+
+<p align="center">
+  <img src="../images/3d_transform/euler_angles_12.jpg"/>
+</p>
+
+<a name="is_fixed_axis"></a>
+
+以上不同旋转轴合成的旋转矩阵，每一种都可以看成 **同一旋转矩阵的两种不同物理变换**：
+
+* 绕 **固定轴** 旋转
+* 绕 **动轴** 旋转
+
+以 **$Z_1Y_2X_3$** 进行为例，旋转矩阵表示为 $\mathbf{R} = \mathbf{R}_z \mathbf{R}_y \mathbf{R}_x$，说明：
+
+* 绕 **固定轴** 旋转：以初始坐标系作为固定坐标系，**分别先后绕固定坐标系的X、Y、Z轴** 旋转；
+
+* 绕 **动轴** 旋转：先绕 **初始Z轴** 旋转，再绕 **变换后的Y轴** 旋转，最后绕 **变换后的X轴** 旋转
+
+即 绕 **固定坐标轴的XYZ** 和 **绕运动坐标轴的ZYX** 的旋转矩阵是一样的。
+
+我们经常用的欧拉角一般就是 **$Z_1Y_2X_3$** 轴序的 **yaw-pitch-roll**，如下图所示：  
+
+<p align="center">
+  <img src="../images/3d_transform/rpy_plane.png"/>
+</p>
+
+对应的旋转矩阵为  
+
+$$
+\mathbf{R} = \mathbf{R}_z \mathbf{R}_y \mathbf{R}_x = \mathbf{R}(\theta_{yaw}) \mathbf{R}(\theta_{pitch}) \mathbf{R}(\theta_{roll})
+$$
+
+其逆矩阵为：  
+
+$$
+\begin{aligned}
+\mathbf{R}^{-1}
+&= (\mathbf{R}_z \mathbf{R}_y \mathbf{R}_x)^{-1} \\
+&= \mathbf{R}_x^{-1} \mathbf{R}_y^{-1} \mathbf{R}_z^{-1} \\
+&= \mathbf{R}(-\theta_{roll}) \mathbf{R}(-\theta_{pitch}) \mathbf{R}(-\theta_{yaw})
+\end{aligned}
+$$
+
+上面 $\mathbf{R}_x \mathbf{R}_y \mathbf{R}_z$ 以 **Cosine Matrix** 的形式表示为（**右手系**）：
+
+$$
+\mathbf{R}_x(\theta) =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) &  \cos(\theta)
+\end{bmatrix}
+$$
+
+$$
+\mathbf{R}_y(\theta) =
+\begin{bmatrix}
+ \cos(\theta) & 0 & \sin(\theta) \\
+0 & 1 & 0 \\
+-\sin(\theta) & 0 & \cos(\theta)
+\end{bmatrix}
+$$
+
+$$
+\mathbf{R}_z(\theta) =
+\begin{bmatrix}
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) &  \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
 
 # 旋转方式
 
-## active
+* active rotation: rotating vectors
 
-* rotating vectors
-
-## passive
-
-* rotating frames
+* passive rotation: rotating frames
 
 
 # 旋转小量
 
-* 若小旋转向量 $\Delta \boldsymbol{\phi}$，则旋转小量
+若小旋转向量 $\Delta \boldsymbol{\phi}$，则旋转小量
 
 $$
 \Delta \mathbf{R}
@@ -69,7 +200,7 @@ $$
 \approx \begin{bmatrix} 1 \\ \frac{1}{2} \Delta \boldsymbol{\phi} \end{bmatrix}
 $$
 
-* 两种对旋转更新的方式
+两种对旋转更新的方式
 
 $$
 \mathbf{R} \leftarrow \mathbf{R} \cdot \Delta \mathbf{R}
@@ -82,16 +213,16 @@ $$
 
 # 旋转扰动
 
-## Local Perturbation
+* Local Perturbation
 
-## Global Perturbation
+* Global Perturbation
 
 
 # 旋转导数
 
 ## 对时间求导
 
-* 若角速度为 $\boldsymbol{\omega}$，那么旋转的时间导数为
+若角速度为 $\boldsymbol{\omega}$，那么旋转的时间导数为
 
 $$
 \dot{\mathbf{q}}
@@ -113,17 +244,17 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial(\boldsymbol{R} p)}{\partial \phi} &=
-\frac{\partial\left(\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}\right)}{\partial \boldsymbol{\phi}} \\
-&=\lim _{\delta \phi \rightarrow 0} \frac{\exp \left((\boldsymbol{\phi}+\delta \boldsymbol{\phi})^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\delta \boldsymbol{\phi}} \\
-&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\exp \left(\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\delta \boldsymbol{\phi}} \\
-& \approx \lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\left(\boldsymbol{I}+\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\delta \boldsymbol{\phi}} \\
-&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge} \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\delta \boldsymbol{\phi}} \\
-&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{-\left(\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}\right)^{\wedge} \boldsymbol{J}_{l} \delta \boldsymbol{\phi}}{\delta \boldsymbol{\phi}}=-(\boldsymbol{R} \boldsymbol{p})^{\wedge} \boldsymbol{J}_{l}
+\frac{\partial(\mathbf{R} \mathbf{p})}{\partial \phi} &=
+\frac{\partial\left(\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}\right)}{\partial \boldsymbol{\phi}} \\
+&=\lim _{\delta \phi \rightarrow 0} \frac{\exp \left((\boldsymbol{\phi}+\delta \boldsymbol{\phi})^{\wedge}\right) \mathbf{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\delta \boldsymbol{\phi}} \\
+&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\exp \left(\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\delta \boldsymbol{\phi}} \\
+& \approx \lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\left(\boldsymbol{I}+\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\delta \boldsymbol{\phi}} \\
+&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{\left(\boldsymbol{J}_{l} \delta \boldsymbol{\phi}\right)^{\wedge} \exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\delta \boldsymbol{\phi}} \\
+&=\lim _{\delta \boldsymbol{\phi} \rightarrow 0} \frac{-\left(\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}\right)^{\wedge} \boldsymbol{J}_{l} \delta \boldsymbol{\phi}}{\delta \boldsymbol{\phi}}=-(\mathbf{R} \mathbf{p})^{\wedge} \boldsymbol{J}_{l}
 \end{aligned}
 $$
 
-with
+其中，$\mathbf{J}_l$ 为 **$SO(3)$ 的左雅克比矩阵**，其定义为
 
 $$
 \boldsymbol{J}_{l}=\boldsymbol{J}=\frac{\sin \theta}{\theta} \boldsymbol{I}+\left(1-\frac{\sin \theta}{\theta}\right) \boldsymbol{a} \boldsymbol{a}^{T}+\frac{1-\cos \theta}{\theta} \boldsymbol{a}^{\wedge}
@@ -131,28 +262,24 @@ $$
 
 ### 扰动方式
 
-对李群左乘或者右乘微小扰动量，然后对该扰动求导，成为左扰动和右扰动模型，这种方式 **省去了计算雅克比**，所以使用更为常见
+Note: 本质是 **Local 或 Global 扰动**
 
-（1）$\frac{d(\mathbf{R} \mathbf{p})}{d \mathbf{R}}$
+对李群左乘或者右乘微小扰动量，然后对该扰动求导，成为左扰动和右扰动模型，这种方式 **省去了计算雅克比**，所以使用更为常见
 
 $$
 \begin{aligned}
-\frac{d(\mathbf{R} \mathbf{p})}{d \mathbf{R}}
-&=\frac{\partial(\boldsymbol{R} \boldsymbol{p})}{\partial \boldsymbol{\varphi}} \\
-&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\exp \left(\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
-& \approx \lim _{\varphi \rightarrow 0} \frac{\left(1+\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
-&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\boldsymbol{\varphi}^{\wedge} \boldsymbol{R} \boldsymbol{p}}{\varphi} \\
-&=\lim _{\varphi \rightarrow 0} \frac{-(\boldsymbol{R} \boldsymbol{p})^{\wedge} \boldsymbol{\varphi}}{\varphi} \\
-&=-(\boldsymbol{R} \boldsymbol{p})^{\wedge}
+\frac{\partial(\mathbf{R} \mathbf{p})}{\partial \boldsymbol{\phi}}
+&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\exp \left(\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\varphi} \\
+& \approx \lim _{\varphi \rightarrow 0} \frac{\left(I+\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}-\exp \left(\boldsymbol{\phi}^{\wedge}\right) \mathbf{p}}{\varphi} \\
+&=\lim _{\boldsymbol{\varphi} \rightarrow 0} \frac{\boldsymbol{\varphi}^{\wedge} \mathbf{R} \mathbf{p}}{\varphi} \\
+&=\lim _{\varphi \rightarrow 0} \frac{-(\mathbf{R} \mathbf{p})^{\wedge} \boldsymbol{\varphi}}{\varphi} \\
+&=-(\mathbf{R} \mathbf{p})^{\wedge}
 \end{aligned}
 $$
 
-（2）$\frac{d(\mathbf{R}^{-1} \mathbf{p})}{d \mathbf{R}}$
-
 $$
 \begin{aligned}
-\frac{d(\mathbf{R}^{-1} \mathbf{p})}{d \mathbf{R}}
-&= \frac{\partial{(\mathbf{R}^{-1} \mathbf{p})}}{\partial{\varphi}} \\
+\frac{\partial{(\mathbf{R}^{-1} \mathbf{p})}}{\partial{\boldsymbol{\phi}}}
 &= \lim_{\varphi \rightarrow 0}
    \frac{(\mathbf{R}\exp(\varphi^{\wedge}))^{-1} \mathbf{p} - \mathbf{R}^{-1} \mathbf{p}} {\varphi} \\
 &= \lim_{\varphi \rightarrow 0}
@@ -168,41 +295,27 @@ $$
 \end{aligned}
 $$
 
-（3）$\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d \mathbf{R}_2}$
-
 $$
 \begin{aligned}
-\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d \mathbf{R}_2}
-&= \lim_{\phi \rightarrow 0}
-   \frac{\ln(\mathbf{R}_1 (\mathbf{R}_2 \exp(\phi^{\wedge}))^{-1})^{\vee} - \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}} {\phi} \\
-&= \lim_{\phi \rightarrow 0}
-   \frac{\ln(\mathbf{R}_1 \exp(-\phi^{\wedge}) \mathbf{R}_2^{-1})^{\vee}  - \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}} {\phi} \\
-&= \lim_{\phi \rightarrow 0}
-   \frac{\ln(\mathbf{R}_1 \mathbf{R}_2^{-1} \exp((-\mathbf{R}_2 \phi)^{\wedge}))^{\vee} - \ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}} {\phi} \\
-&= \lim_{\phi \rightarrow 0}
-   \frac{\ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee} + \mathbf{J}_r^{-1} (-\mathbf{R}_2 \phi) - \ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}} {\phi} \\
-&= -\mathbf{J}_r^{-1}(\ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}) \mathbf{R}_2
+\frac{\partial \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{\partial \boldsymbol{\phi}_2}
+&= \lim_{\varphi \rightarrow 0}
+   \frac{\ln(\mathbf{R}_1 (\mathbf{R}_2 \exp(\varphi^{\wedge}))^{-1})^{\vee} - \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}} {\varphi} \\
+&= \lim_{\varphi \rightarrow 0}
+   \frac{\ln(\mathbf{R}_1 \exp(-\varphi^{\wedge}) \mathbf{R}_2^{-1})^{\vee}  - \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}} {\varphi} \\
+&= \lim_{\varphi \rightarrow 0}
+   \frac{\ln(\mathbf{R}_1 \mathbf{R}_2^{-1} \exp((-\mathbf{R}_2 \varphi)^{\wedge}))^{\vee} - \ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}} {\varphi} \\
+&\approx \lim_{\varphi \rightarrow 0}
+   \frac{\ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee} + \mathbf{J}_r^{-1} (-\mathbf{R}_2 \varphi) - \ln(\mathbf{R}_1\mathbf{R}_2^{-1})^{\vee}} {\varphi} \\
+&= -\mathbf{J}_r^{-1} \mathbf{R}_2
 \end{aligned}
 $$
 
-性质：
-
-$$
-R \exp({\phi}^{\wedge}) R^{-1} = \exp(R {\phi}^{\wedge})
-$$
-
-（4）$\frac{d \ln(\mathbf{R}_1 \mathbf{R}_2^{-1})^{\vee}}{d {\theta}_2}$
+**对于矩阵A和B，$\exp(A)\exp(B) \neq \exp(A+B)$**，错误示例：
 
 $$
 r = \ln(R_1 \cdot R_2^T)^\vee =
 \ln \left[ \exp({\theta}_1^{\wedge}) \cdot \exp(-{\theta}_2^{\wedge}) \right]^\vee = {\theta}_1 - {\theta}_2
 $$
-
-$$
-\frac{r}{\theta_2} = -I
-$$
-
-（4）式推导错误，因为对于矩阵A和B，$\exp(A)\exp(B) \neq \exp(A+B)$
 
 ### 四元数形式
 
