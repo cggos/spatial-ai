@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Marginalization in Sliding Window VIO"
+title: "Marginalization and FEJ in Sliding Window VIO"
 tags: SLAM
 key: slam-sw-vio-marginalization
 ---
@@ -20,6 +20,8 @@ key: slam-sw-vio-marginalization
 
 > 基于滑窗优化的边缘化，可以用公司小组成员离职类比，小组相当于滑窗，离职交接相当于保留共视信息，没有交接就回影响小组未来的发展；交接不好，重新搞；员工贡献不大直街裁掉，就是remove或throw；而基于共视图的，相当于组长从他的人脉网招人搭建队伍做事。
 
+
+# Eliminate Old Variables
 
 ## Marginal Probability
 
@@ -95,9 +97,9 @@ $$
 
 解出未知量 $x$ 之后带入第二个方程 $C x+D y=b$ 就可以解出 $y$
 
-# Marginalization in VINS-Mono
+## Marginalization in VINS-Mono
 
-## Two way marginalization
+### Two way marginalization
 
 * 当滑动窗口中第二新的图像帧为关键帧，则 marg 最老的帧,以及上面的路标点;
 * 当滑动窗口中第二新的图像帧不是关键帧,则丢弃这一帧上的视觉测量信息，IMU 预积分传给下一帧。
@@ -106,15 +108,15 @@ $$
   <img src="../images/vins_mono/marginalization.png"/>
 </p>
 
-## 数据结构
+### 数据结构
 
 <p align="center">
   <img src="../images/vins_mono/marg_datastructure.png" style="width:100%;"/>
 </p>
 
-## 代码逻辑
+### 代码逻辑
 
-### addResidualBlockInfo
+#### addResidualBlockInfo
 
 ```cpp
 factors.emplace_back(residual_block_info);
@@ -134,7 +136,7 @@ for (int i = 0; i < drop_set.size(); i++) {
 }
 ```
 
-### preMarginalize
+#### preMarginalize
 
 ```cpp
 for (auto it : factors) {
@@ -154,21 +156,21 @@ for (auto it : factors) {
 }
 ```
 
-### marginalize
+#### marginalize
 
-#### Marginalization via Schur complement on information matrix
+##### Marginalization via Schur complement on information matrix
 
 <p align="center">
   <img src="../images/vins_mono/schur_complement.png" style="width:90%;"/>
 </p>
 
-#### fill in of the information matrix
+##### fill in of the information matrix
 
 <p align="center">
   <img src="../images/vins_mono/marg_H_fillin.png" style="width:100%;"/>
 </p>
 
-#### linearized_jacobians & linearized_residuals
+##### linearized_jacobians & linearized_residuals
 
 <p align="center">
   <img src="../images/vins_mono/marg_linearize_J_r.jpg" style="width:100%;"/>
@@ -189,7 +191,7 @@ linearized_jacobians =     S_sqrt.asDiagonal() * saes2.eigenvectors().transpose(
 linearized_residuals = S_inv_sqrt.asDiagonal() * saes2.eigenvectors().transpose() * b;
 ```
 
-### MarginalizationFactor::Evaluate
+#### MarginalizationFactor::Evaluate
 
 <p align="center">
   <img src="../images/vins_mono/marg_update_prior_residual.png"/>
@@ -235,9 +237,7 @@ if (jacobians) {
 }
 ```
 
-# First Estimate Jacobian
-
-FEJ 算法：不同残差对同一个状态求雅克比时，线性化点必须一致，这样就能避免零空间退化而使得不可观变量变得可观。
+# Add New Variables
 
 ## Consistency in SW
 
@@ -262,3 +262,7 @@ FEJ 算法：不同残差对同一个状态求雅克比时，线性化点必须�
 </p>
 
 **解决办法：First Estimated Jacobian。**
+
+### First Estimate Jacobian (FEJ)
+
+FEJ 算法：不同残差对同一个状态求雅克比时，线性化点必须一致，这样就能避免零空间退化而使得不可观变量变得可观。
