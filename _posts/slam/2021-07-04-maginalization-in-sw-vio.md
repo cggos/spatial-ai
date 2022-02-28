@@ -7,7 +7,21 @@ key: slam-sw-vio-marginalization
 
 [TOC]
 
-# Marginal Probability
+# Overview
+
+## 滑动窗口与共视图
+
+我们根据 **时空** 对 **局部BA** 进行分类：
+
+* 时间：滑动窗口
+* 空间：共视图
+
+通过 企业管理，解释滑窗的边缘化以及共视图为啥没有边缘化：
+
+> 基于滑窗优化的边缘化，可以用公司小组成员离职类比，小组相当于滑窗，离职交接相当于保留共视信息，没有交接就回影响小组未来的发展；交接不好，重新搞；员工贡献不大直街裁掉，就是remove或throw；而基于共视图的，相当于组长从他的人脉网招人搭建队伍做事。
+
+
+## Marginal Probability
 
 $$
 \begin{aligned}
@@ -23,7 +37,7 @@ $$
   \boldsymbol{\eta}_{a} \\
   \boldsymbol{\eta}_{b}
   \end{array}\right],\left[\begin{array}{cc}
-  \boldsymbol{\Lambda}_{a a} & \boldsymbol{\Lambda}_{a a} \\
+  \boldsymbol{\Lambda}_{a a} & \boldsymbol{\Lambda}_{a b} \\
   \boldsymbol{\Lambda}_{b a} & \boldsymbol{\Lambda}_{b b}
   \end{array}\right]\right)
 \end{aligned}
@@ -34,6 +48,52 @@ Marginalization and Conditioning operations on a gaussian distribution expressse
 <p align="center">
   <img src="../images/vins_mono/marginalization-condition.png" style="width:80%;"/>
 </p>
+
+## Three Math Methods for Marginalization
+
+* Throwing Rows and Cols with Covariance Matrix (Filter-based)
+
+* **Nullspace Projection** with Jacobian Matrix (MSCKF)
+
+  - SVD
+  - QR
+
+* **Schur Complement** with Hessian/Information Matrix (Optimization-based Sliding window)
+
+### 舒尔补 (Schur Complement)
+
+$$
+M=
+\left[\begin{array}{ll}
+A & B \\
+C & D
+\end{array}\right]
+$$
+
+则 **D在M中的舒尔补** 为
+
+$$
+M / D := A-B D^{-1} C
+$$
+
+#### 在矩阵方程求解中的应用
+
+线性方程组
+
+$$
+\begin{aligned}
+&A x+B y=a \\
+&C x+D y=b
+\end{aligned}
+$$
+
+利用 D的舒尔补 先求 $x$
+
+$$
+\left(A-B D^{-1} C\right) x=a-B D^{-1} b
+$$
+
+解出未知量 $x$ 之后带入第二个方程 $C x+D y=b$ 就可以解出 $y$
 
 # Marginalization in VINS-Mono
 
@@ -202,9 +262,3 @@ FEJ 算法：不同残差对同一个状态求雅克比时，线性化点必须�
 </p>
 
 **解决办法：First Estimated Jacobian。**
-
-# 滑窗与共视图
-
-通过企业管理解释滑窗的边缘化以及共视图为啥没有边缘化：
-
-> 基于滑窗优化的边缘化，可以用公司小组成员离职类比，小组相当于滑窗，离职交接相当于保留共视信息，没有交接就回影响小组未来的发展；员工贡献不大直街裁掉，就是remove或throw；而基于共视图的，相当于组长从他的人脉网招人搭建队伍做事。
