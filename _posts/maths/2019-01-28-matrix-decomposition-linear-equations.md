@@ -320,7 +320,7 @@ In linear algebra, the **column space** (also called **the range or image**) of 
 ## nullspace $N(A)$
 
 $$
-A^T x = 0
+A x = 0
 $$
 
 The **nullity** of a matrix is the dimension of the null space.
@@ -348,7 +348,7 @@ $$
 
 $$
 \begin{aligned}
-A_{m \times n} &= U_{m \times m} \cdot {\Sigma}_{m \times n} \cdot V^T_{n \times n} \\
+A_{m \times n} &= U_{m \times m} \cdot {\Sigma}_{m \times n} \cdot V_{n \times n}^T \\
 &=
 \left[\begin{array}{ccc|ccc}
 u_{1} & \cdots & u_{r} & u_{r+1} & \cdots & u_{m}
@@ -370,15 +370,23 @@ v_{n}^{T}
 \end{array}\right] \\
 &=
 \begin{bmatrix} {U_1}_{m \times r} & {U_2}_{m \times (m-r)} \end{bmatrix} \cdot
-\begin{bmatrix} {\Sigma}_1 & 0 \\ 0 & 0 \end{bmatrix} \cdot
-\begin{bmatrix} V^T_1 \\[3pt] V^T_2 \end{bmatrix}
+\begin{bmatrix} {\Sigma}_r & 0 \\ 0 & 0 \end{bmatrix} \cdot
+\begin{bmatrix} {V_1}_{n \times r}^T \\[3pt] {V_2}_{n \times (n-r)}^T \end{bmatrix} \\
+&=
+U_1 \cdot \Sigma_r \cdot V_1^T
 \end{aligned}
+$$
+
+nullspace
+
+$$
+A \cdot V_2 = 0 \longrightarrow  N(A) = V_2 \in \mathbb{R}^{n \times (n-r)}
 $$
 
 left nullspace
 
 $$
-U_2^T \cdot A = 0 \longrightarrow  N(A^T) = U_2^T \in \mathbb{R}^{(m-r) \times m}
+U_2^T \cdot A = 0 \longrightarrow  N(A^T) = U_2 \in \mathbb{R}^{(m-r) \times m}
 $$
 
 column space or the range (????)
@@ -400,7 +408,7 @@ $$
 left nullspace
 
 $$
-Q_2^T \cdot A = 0 \longrightarrow N(A^T) = Q_2^T \in \mathbb{R}^{(m-r) \times m}
+Q_2^T \cdot A = 0 \longrightarrow N(A^T) = Q_2 \in \mathbb{R}^{(m-r) \times m}
 $$
 
 # 线性方程组
