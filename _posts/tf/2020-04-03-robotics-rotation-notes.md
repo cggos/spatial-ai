@@ -31,6 +31,21 @@ r_{31} & r_{32} & r_{33}
 \quad s.t. \quad \mathbf{RR}^T = \mathbf{I}, \det(\mathbf{R}) = 1
 $$
 
+### 旋转矩阵 归一化
+
+我们通过某些计算得出的“旋转矩阵”可能不符合旋转矩阵的条件，需要对其 归一化
+
+
+```cpp
+// ref ORB-SLAM3
+cv::Mat NormalizeRotation(const cv::Mat &R)
+{
+    cv::Mat U,w,Vt;
+    cv::SVDecomp(R,w,U,Vt,cv::SVD::FULL_UV);
+    return U*Vt;
+}
+```
+
 ## Lie Group & Lie Algebra
 
 $$
