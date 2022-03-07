@@ -28,7 +28,7 @@ y_{k} = h(x_k) + w,  \quad w \sim \mathcal{N}(0, R)
 \end{cases}
 $$
 
-在工作点附近线性化 (在此不考虑状态预测，将状态先验定义为预测后的值)
+在 **工作点** 附近 **线性化** (在此不考虑状态预测，将状态先验定义为预测后的值)
 
 $$
 \begin{cases}
@@ -99,12 +99,13 @@ $$
 根据 贝叶斯法则， **后验 = 似然 x 先验**
 
 $$
+{\color{red}{
 \begin{aligned}
 \underbrace{P(X \mid Z)}_{posterior} 
 =& \frac{P(X, Z)}{P(Z)}  \\
 =& \frac{P(Z \mid X) P(X)}{P(Z)} \\
 \propto& \underbrace{P(Z \mid X)}_{likehood} \underbrace{P(X)}_{prior}
-\end{aligned}
+\end{aligned}}}
 $$
 
 解决上述系统的状态估计问题，就是求X的最优估计使得 **最大后验概率(MAP)**，即求 **最大似然估计(MLE)**
@@ -132,7 +133,7 @@ $$
 z = f(x) + n, \quad n \sim \mathcal{N}(0, \Sigma), \quad z \sim \mathcal{N}(f(x), \Sigma)
 $$
 
-则 其 似然概率
+则其 **似然概率**
 
 $$
 P(z \mid x) 
@@ -147,7 +148,7 @@ $$
 $$
 
 
-因此，在 **MLE 和 高斯分布** 的假设下，我们可以得到 **最小二乘问题(OLS)**
+因此，在 **MLE 和 高斯分布** 的假设下，我们可以得到 **加权最小二乘问题(WLS)**
 
 $$
 \begin{aligned}
@@ -155,15 +156,48 @@ X^*
 =& \arg \min_X - \log \left( P(z \mid x) \right) \\
 =& \arg \min_X \frac{1}{2} (z-f(x))^{T} {\Sigma}^{-1} (z-f(x)) \\
 =& \arg \min_X \frac{1}{2} \| z-f(x) \|^2_{\Sigma} \\
-=& \arg \min_X \frac{1}{2} \| z - f(x_{op}) - J \Delta_{op} \|^2_{\Sigma} \\
-=& \arg \min_X \frac{1}{2} \| J \Delta_{op} - (z - f(x_{op})) \|^2_{\Sigma} \\
-=& \arg \min_X \frac{1}{2} \| r(x) \|^2_{\Sigma}
 \end{aligned}
 $$
 
-# OLS $\rightarrow$ Gauss-Newton
+对于 **加权最小二乘**，上式中的 $\Sigma^{-1}$ (**信息矩阵**，协方差的逆)，就是 **权重矩阵** $W$；方差越大，权重越小。
 
-根据以上最小二乘问题， 我们可以得到G-N正规方程为
+# WLS $\rightarrow$ OLS
+
+通过 **Choleskey分解**，我们可以将 **马氏范数** 转换为 **2范数** (**白化**)，从 **WLS** 得到 **最小二乘问题(OLS)**
+
+$$
+\text{Choleskey}(\Sigma^{-1}) = LL^T
+\quad \longrightarrow \quad
+\| r^\prime \|^2 \triangleq r^T \Sigma^{-1} r = r^T LL^T r = (L^Tr)^T (L^Tr)
+$$
+
+残差
+
+$$
+r^\prime = L^T r
+$$
+
+雅克比矩阵
+
+$$
+J^\prime = L^T J
+$$
+
+# WLS $\rightarrow$ Gauss-Newton
+
+根据以上最小二乘问题
+
+$$
+\begin{aligned}
+X^* 
+=& \arg \min_X \frac{1}{2} \| z-f(x) \|^2_{\Sigma} \\
+=& \arg \min_X \frac{1}{2} \| z - f(x_{op}) - J \Delta_{op} \|^2_{\Sigma} \\
+=& \arg \min_X \frac{1}{2} \| J \Delta_{op} - (z - f(x_{op})) \|^2_{\Sigma} \\
+=& \arg \min_X \frac{1}{2} \| J \Delta_{op} - r_{op} \|^2_{\Sigma}
+\end{aligned}
+$$
+
+可以得到G-N正规方程为
 
 $$
 (J^T \Sigma^{-1} J) \Delta_{op} = J^T \Sigma^{-1} r_{op}
@@ -174,8 +208,6 @@ $$
 $$
 \Delta_{op} = (J^T \Sigma^{-1} J)^{-1} J^T \Sigma^{-1} r_{op}
 $$
-
-另外，对于 **加权最小二乘**，上式中的 $\Sigma^{-1}$ (**信息矩阵**，协方差的逆)，就是 **权重矩阵** $W$；方差越大，权重越小。
 
 # Gauss-Newton $\rightarrow$ EKF(update P)
 
