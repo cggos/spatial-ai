@@ -36,7 +36,7 @@ key: page-bio
 
 * <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
 
-* <a href="https://www.reddit.com/user/cggos"><img src="assets/images/logo_reddit.png" style="width:1em;margin-right:.5em;" alt="Reddit icon">Reddit</a>
+<!-- * <a href="https://www.reddit.com/user/cggos"><img src="assets/images/logo_reddit.png" style="width:1em;margin-right:.5em;" alt="Reddit icon">Reddit</a> -->
 
 * <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN Blog</a>
 
