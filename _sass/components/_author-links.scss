@@ -45,7 +45,7 @@
         @include clickable($text-color-1, #a4dd07);
       }      
       .researchgate-button {
-        @include clickable($text-color-1, #73ff00);
+        @include clickable($text-color-1, rgb(0, 255, 200));
       }         
       .reddit-button {
         @include clickable($text-color-1, #ff5500);

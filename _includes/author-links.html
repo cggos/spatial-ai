@@ -28,7 +28,7 @@
     {%- endif -%}
 
     {%- if _author.credly -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'ORCID' }}">
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Credly' }}">
         <a class="button button--circle credly-button" itemprop="sameAs" href="https://www.credly.com/{{ _author.credly }}" target="_blank">
           <div class="icon">{%- include svg/icon/social/credly.svg -%}</div>
         </a>
@@ -52,7 +52,7 @@
     {%- endif -%}    
 
     {%- if _author.reddit -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Facebook' }}">
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'reddit' }}">
         <a class="button button--circle reddit-button" itemprop="sameAs" href="https://www.reddit.com/{{ _author.reddit }}" target="_blank">
           <div class="icon">{%- include svg/icon/social/reddit.svg -%}</div>
         </a>
