@@ -20,7 +20,7 @@ node_modules/
 
 yarn.lock
 package-lock.json
-# Gemfile.lock
+Gemfile.lock
 
 _site/
 .jekyll-metadata
