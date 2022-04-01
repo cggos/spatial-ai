@@ -1,9 +1,19 @@
 ---
-layout: page_simple
+layout: page
 title: Bio
 show_title: false
 ---
 
-{%- include article/footer/author-profile.html author=site.author -%}
+<div class="layout--article">
+  
+  {%- include article/footer/author-profile.html author=site.author -%}
 
-{{ content }}
+  <div class="article__content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</div>
+
+<script>
+  {%- include scripts/article.js -%}
+</script>
