@@ -28,22 +28,12 @@ key: page-bio
 
 * <a href="https://cggos.github.io/assets/HongchenGao-CV.pdf" target="_blank"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="PDF icon">Download Resume (PDF, zh)</a>
 
-* <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN Blog</a>
-
-* <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">cnblogs</a> (most written in university, deprecated)
-
-* <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a>
 
 ## Research Interests
 
 * Skills: CV, SLAM, VIO, MSF, HPC
 * Fields: XR(AR, VR, MR), Robotics(Mobile Robot, Autonomous Driving, Drones)
 
-## Presentations
-
-* Slides: [SlideShare](https://www2.slideshare.net/HongchenGao)
-
-* Videos: [Bilibili](https://space.bilibili.com/158441969)
 
 ## Projects
 
@@ -77,11 +67,58 @@ key: page-bio
 
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
-## Slack Workspaces
 
-* [CG-SpatialAI](https://spatial-ai-3d.slack.com)
-* [CG-Metaverse](https://metaverse-ai.slack.com)
+## Repository
+
+* Code
+
+  - GitHub
+
+
+* Blog
+
+  - <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a>
+
+  - <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> (most written in university, deprecated)
+
+
+* Presentations
+
+  - Slides: [SlideShare](https://www2.slideshare.net/HongchenGao)
+  
+  - Videos: [Bilibili](https://space.bilibili.com/158441969)
+
+
+* 3D Models
+  
+  - <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a>
+
+
+* Docker hub
+
+
+* PPA
+
+
+## Community
+
+<a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> &emsp; <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a>
+
+* Slack Workspaces
+
+  - [CG-SpatialAI](https://spatial-ai-3d.slack.com)
+  - [CG-Metaverse](https://metaverse-ai.slack.com)
+
 
 ## Books
 
 * [ ] TODO
+
+
+## Buy Me a Coffee
+
+* 点击 [我的爱发电](https://afdian.net/@CGABC) 主页
+
+* 点击下方按钮，通过微信或支付宝直接扫码打赏
+
+<div id="cyReward" role="cylabs" data-use="reward"></div>
