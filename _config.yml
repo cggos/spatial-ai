@@ -51,6 +51,10 @@ author:
   douban    : # CGABC # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
   linkedin  : # CGABC # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
+  credly    : cgabc # https://www.credly.com/users/cgabc
+  orcid     : 0000-0003-2841-6617 # https://orcid.org/0000-0003-2841-6617
+  researchgate: Hongchen-Gao # https://www.researchgate.net/profile/Hongchen-Gao
+  reddit    : cggos # https://www.reddit.com/user/cggos
 
 
 ## => GitHub Repository (if the site is hosted by GitHub)

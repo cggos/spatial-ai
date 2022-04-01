@@ -26,17 +26,7 @@ titles:
 key: page-bio
 ---
 
-<!-- * <a href="http://gofile.me/5lGth/Dh3dvADvJ"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">Download Resume (PDF, zh)</a> -->
-
 * <a href="https://cggos.github.io/assets/HongchenGao-CV.pdf" target="_blank"><img src="assets/images/logo_pdf.jpg" style="width:1em;margin-right:.5em;" alt="PDF icon">Download Resume (PDF, zh)</a>
-
-* <a href="https://www.credly.com/users/cgabc"><img src="assets/images/logo_credly.png" style="width:1em;margin-right:.5em;" alt="Credly icon">Credly</a>
-
-* <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-2841-6617" href="https://orcid.org/0000-0003-2841-6617" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="assets/images/logo_orcid.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID: 0000-0003-2841-6617</a></div>
-
-* <a href="https://www.researchgate.net/profile/Hongchen-Gao"><img src="assets/images/logo_rg.png" style="width:1em;margin-right:.5em;" alt="ResearchGate icon">ResearchGate</a>
-
-<!-- * <a href="https://www.reddit.com/user/cggos"><img src="assets/images/logo_reddit.png" style="width:1em;margin-right:.5em;" alt="Reddit icon">Reddit</a> -->
 
 * <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN Blog</a>
 

@@ -38,6 +38,18 @@
       .npm-button {
         @include clickable($text-color-1, $npm-color);
       }
+      .credly-button {
+        @include clickable($text-color-1, #eb6f0b);
+      }      
+      .orcid-button {
+        @include clickable($text-color-1, #a4dd07);
+      }      
+      .researchgate-button {
+        @include clickable($text-color-1, rgb(0, 255, 200));
+      }         
+      .reddit-button {
+        @include clickable($text-color-1, #ff5500);
+      }      
     }
   }
 }
