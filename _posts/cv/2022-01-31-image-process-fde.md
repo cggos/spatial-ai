@@ -16,7 +16,7 @@ code: https://github.com/cggos/cv_py/blob/main/fft_fde.py
 * 图像模糊度计算
 * 镜头对焦
 
-# 频域熵(FDE) {% cite kristan2004entropy %}
+# 频域熵(FDE) 
 
 计算图像的 **频域谱**，表示如下
 
@@ -67,4 +67,4 @@ $$
 
 # References
 
-{% bibliography --cited %}
+* Entropy based measure of camera focus
