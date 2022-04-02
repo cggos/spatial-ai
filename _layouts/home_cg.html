@@ -1,0 +1,85 @@
+---
+layout: page_simple
+titles:
+  # @start locale config
+  en      : &EN       Home
+  en-GB   : *EN
+  en-US   : *EN
+  en-CA   : *EN
+  en-AU   : *EN
+  zh-Hans : &ZH_HANS  Home
+  zh      : *ZH_HANS
+  zh-CN   : *ZH_HANS
+  zh-SG   : *ZH_HANS
+  zh-Hant : &ZH_HANT  主頁
+  zh-TW   : *ZH_HANT
+  zh-HK   : *ZH_HANT
+  ko      : &KO       홈
+  ko-KR   : *KO
+  fr      : &FR       Accueil
+  fr-BE   : *FR
+  fr-CA   : *FR
+  fr-CH   : *FR
+  fr-FR   : *FR
+  fr-LU   : *FR
+  # @end locale config
+show_title: false
+---
+
+<div class="layout--article">
+
+  <div class="article__content" itemprop="articleBody" style="font-size: large;">
+
+    <figure>
+      <blockquote cite="https://blog.slamcore.com/spatial-ai-slam-deep-learning" style="font-size: x-large;">
+        Spatial AI: Augmenting SLAM technology with deep learning
+      </blockquote>
+      <!-- <figcaption> by Professor Andrew Davison</figcaption> -->
+    </figure>
+
+    <p>
+      SLAM is being gradually developed towards Spatial AI, the common sense spatial reasoning which will enable robots and 
+      other artificial devices to operate in general ways in their environments-- not just localising and building geometric maps, 
+      but interacting intelligently with scenes and objects.
+    </p>
+
+    <p>
+      In the context of Spatial AI, deep learning has most obviously had a big impact on bringing semantic meaning to geometric maps of the world.
+    </p>
+
+    <p>
+      More remarkable, at least to those of us from an estimation background, has been the emergence of learning techniques 
+      which now offer promising solutions to geometrical estimation problems. Networks can be trained to predict robust 
+      frame-to-frame visual odometry; dense optical flow prediction; or depth prediction from a single image. 
+      When compared to hand-designed methods for the same tasks, these methods are strong on robustness, since they will 
+      always make predictions which are similar to real scenarios present in their training data. But designed methods 
+      still often have advantages in flexibility in a range of unforeseen scenarios, and in final accuracy due to 
+      the use of precise iterative optimisation.
+    </p>
+
+    <p align="center">
+      <img src="https://blog.slamcore.com/hs-fs/hubfs/andy-blog-image.png?width=600&name=andy-blog-image.png">
+    </p>
+
+    <blockquote cite="https://blog.slamcore.com/spatial-ai-slam-deep-learning" style="font-size: x-large;">
+      From SLAM to Spatial AI
+    </blockquote>
+    <div>{%- include extensions/youtube.html id='lGIM2WVp5t0' -%}</div>
+
+    Ref:
+    <ul>
+      <li>
+        https://blog.slamcore.com/spatial-ai-slam-deep-learning
+      </li>
+      <li>
+        FutureMapping: The Computational Structure of Spatial AI Systems
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+
+<script>
+  {%- include scripts/article.js -%}
+</script>
