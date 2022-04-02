@@ -51,18 +51,10 @@
       </li>
     {%- endif -%}    
 
-    {%- if _author.reddit -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'reddit' }}">
-        <a class="button button--circle reddit-button" itemprop="sameAs" href="https://www.reddit.com/{{ _author.reddit }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/reddit.svg -%}</div>
-        </a>
-      </li>
-    {%- endif -%}
-
-    {%- if _author.facebook -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Facebook' }}">
-        <a class="button button--circle facebook-button" itemprop="sameAs" href="https://www.facebook.com/{{ _author.facebook }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/facebook.svg -%}</div>
+    {%- if _author.github -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Github' }}">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/{{ _author.github }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/github.svg -%}</div>
         </a>
       </li>
     {%- endif -%}
@@ -75,10 +67,10 @@
       </li>
     {%- endif -%}
 
-    {%- if _author.twitter -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}">
-        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/{{ _author.twitter }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/twitter.svg -%}</div>
+    {%- if _author.facebook -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Facebook' }}">
+        <a class="button button--circle facebook-button" itemprop="sameAs" href="https://www.facebook.com/{{ _author.facebook }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/facebook.svg -%}</div>
         </a>
       </li>
     {%- endif -%}
@@ -107,14 +99,6 @@
       </li>
     {%- endif -%}
 
-    {%- if _author.github -%}
-      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Github' }}">
-        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/{{ _author.github }}" target="_blank">
-          <div class="icon">{%- include svg/icon/social/github.svg -%}</div>
-        </a>
-      </li>
-    {%- endif -%}
-
     {%- if _author.npm -%}
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'npm' }}">
         <a class="button button--circle npm-button" itemprop="sameAs" href="https://www.npmjs.com/~{{ _author.npm }}" target="_blank">
@@ -122,7 +106,23 @@
         </a>
       </li>
     {%- endif -%}
+
+    {%- if _author.twitter -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}">
+        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/{{ _author.twitter }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/twitter.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
     
+    {%- if _author.reddit -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'reddit' }}">
+        <a class="button button--circle reddit-button" itemprop="sameAs" href="https://www.reddit.com/{{ _author.reddit }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/reddit.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
     {%- if _author.zhihu -%}
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'Zhihu' }}">
         <a class="button button--circle zhihu-button" itemprop="sameAs" href="https://www.zhihu.com/people/{{ _author.zhihu }}" target="_blank">
