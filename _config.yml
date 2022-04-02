@@ -181,6 +181,10 @@ analytics:
     tracking_id : UA-224172194-1 # Google Analytics id for the site
     anonymize_ip: false # Anonymize IP tracking for Analytics
 
+## => Jekyll Scholar
+##############################
+scholar:
+  style: ieee-with-url # "apa" (default), "ieee", "ieee-with-url" 
 
 ## => Build
 ##############################
@@ -231,4 +235,5 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-scholar
   - jemoji
