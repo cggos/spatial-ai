@@ -256,6 +256,10 @@ defaults:
 
 ## => Plugins
 ##############################
+
+# Load plugins
+gems: ['jekyll/scholar']
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
