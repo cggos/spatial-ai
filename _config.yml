@@ -185,6 +185,31 @@ analytics:
 ##############################
 scholar:
   style: ieee-with-url # "apa" (default), "ieee", "ieee-with-url" 
+  # style: elsevier-with-titles-alphabetical
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  group_by: none
+  group_order: ascending
+
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  bibtex_filters:
+  - superscript
+  - latex
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"  
 
 ## => Build
 ##############################
