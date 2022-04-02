@@ -32,7 +32,7 @@ key: page-bio
 ## Research Interests
 
 * Skills: CV, SLAM, VIO, MSF, HPC
-* Fields: XR(AR, VR, MR), Robotics(Mobile Robot, Autonomous Driving, Drones)
+* Fields: XR (AR, VR, MR), Robotics (Mobile Robot, Autonomous Driving, Drones)
 
 
 ## Projects
@@ -68,46 +68,30 @@ key: page-bio
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
 
-## Repository
+## Hub
 
-* Code
-
-  - GitHub
-
-
-* Blog
-
-  - <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a>
-
-  - <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> (most written in university, deprecated)
-
-
-* Presentations
-
-  - Slides: [SlideShare](https://www2.slideshare.net/HongchenGao)
-  
-  - Videos: [Bilibili](https://space.bilibili.com/158441969)
-
-
-* 3D Models
-  
-  - <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a>
-
-
-* Docker hub
-
-
-* PPA
+| &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
+|---------------|--------|
+| Code          | GitHub |
+| Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> (most written in university, deprecated)  |
+| Presentations | [SlideShare](https://www2.slideshare.net/HongchenGao)  |
+| Videos        | [Bilibili](https://space.bilibili.com/158441969) <br/> [YouTube](https://www.youtube.com/channel/UCqcvAd87uSB4rl7fJ0nHGjA)  |
+| 3D Models     | <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a> |
+| Docker Hub    |  |
+| ROS           |  |
+| Ubuntu PPAs   | [Launchpad](https://launchpad.net/~cggos) |
 
 
 ## Community
 
-<a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> &emsp; <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a>
-
-* Slack Workspaces
-
-  - [CG-SpatialAI](https://spatial-ai-3d.slack.com)
-  - [CG-Metaverse](https://metaverse-ai.slack.com)
+| &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
+|---------------|--------|
+| HAM           | CallSign: **BI1NIU** |
+| IRC           |   |
+| Reddit        | [Spatial AI](https://www.reddit.com/r/SpatialAI/) |
+| Stack Overflow | <a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> |
+| Discord       | <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a> |
+| Slack         | [CG-SpatialAI](https://spatial-ai-3d.slack.com) <br/> [CG-Metaverse](https://metaverse-ai.slack.com) |
 
 
 ## Books
