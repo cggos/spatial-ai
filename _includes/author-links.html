@@ -29,7 +29,7 @@
 
     {%- if _author.credly -%}
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'Credly' }}">
-        <a class="button button--circle credly-button" itemprop="sameAs" href="https://www.credly.com/{{ _author.credly }}" target="_blank">
+        <a class="button button--circle credly-button" itemprop="sameAs" href="https://www.credly.com/user/{{ _author.credly }}" target="_blank">
           <div class="icon">{%- include svg/icon/social/credly.svg -%}</div>
         </a>
       </li>
