@@ -88,6 +88,7 @@ key: page-bio
 |---------------|--------|
 | HAM           | CallSign: **BI1NIU** |
 | IRC           | [#SpatialAI at Libera.Chat](https://web.libera.chat/#SpatialAI)  |
+| WeChat Group  | CG-SpatialAI |
 | Reddit        | [Spatial AI](https://www.reddit.com/r/SpatialAI/) |
 | Stack Overflow | <a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> |
 | Discord       | <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a> |
@@ -101,7 +102,13 @@ key: page-bio
 
 ## Buy Me a Coffee
 
+* 磁盘扩容
+
+  - [invite link for Dropbox](https://www.dropbox.com/referrals/AACzo3ugONQq4Ywa8X7lvdz-hPrT5l8fnlY?src=global9): You and I will earn 500 MB.
+
+
 * 点击 [我的爱发电](https://afdian.net/@CGABC) 主页
+
 
 * 点击下方按钮，通过微信或支付宝直接扫码打赏
 
