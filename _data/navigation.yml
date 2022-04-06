@@ -1,4 +1,7 @@
 header:
+  - title: Bio
+    url: /bio.html
+
   - titles:
       # @start locale config
       en      : &EN       Blog
@@ -41,6 +44,3 @@ header:
   
   - title: RSSHub
     url: https://rsshub.cgabc.xyz 
-
-  - title: Bio
-    url: /bio.html
