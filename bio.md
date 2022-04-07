@@ -37,29 +37,17 @@ key: page-bio
 
 ## Projects
 
-* [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X (GNSS, VO) Fusion Localization based on ESKF
+* [x] **[AlgDS](https://github.com/cggos/AlgDS)**: Data Structures and Algorithms
+
+* [x] **[cvkit](https://github.com/cggos/cvkit)**: Computer Vision Kit 
+
+* [x] **[imu_x_fusion](https://github.com/cggos/imu_x_fusion)**: IMU + X(GNSS, 6DoF Odom) Loosely-Coupled Fusion Localization based on EKF(ESKF, IEKF), UKF(UKF/SPKF, JUKF, SVD-UKF) and MAP(GN, LM)
 
 * [x] **[rgbdslam_cg](https://github.com/cggos/rgbdslam_cg)**: 根据高翔博客《一起做RGB-D SLAM》，从零搭建 RGBD-SLAM
 
 * [x] **[msckf_stereo_c](https://github.com/cggos/msckf_stereo_c)**: Stereo MSCKF based on MSCKF_VIO without ROS and 3rd Parties like Eigen, OpenCV, PCL, etc.
 
-* [x] **[stereo_reconstruct_cg](https://github.com/cggos/stereo_reconstruct_cg)**: ROS Wrapper for Stereo Reconstruction, generate Depth Image and Point Cloud by left and right images from Stereo Binocular Camera
-
-* [x] **[vikit_cg](https://github.com/cggos/vikit_cg)**: ChenGuang Vision Kits
-
-* [x] **[cgocv](https://github.com/cggos/cgocv)**: ChenGuang Open Computer Vision class library
-
-* [x] **[ds_alg_cg](https://github.com/cggos/ds_alg_cg)**: Data Structures and Algorithms in C/C++
-
-* [x] **[cam_android](https://github.com/cggos/cam_android)**: An Android Camera Project using Java and Native C++
-
 * [x] **[ARDemoGL](https://github.com/cggos/ARDemoGL)**: AR Demo based on ROS and Pangolin
-
-* [x] **[DIPDemoQt](https://github.com/cggos/DIPDemoQt)**: Digital Image Processing Demos with OpenCV and Qt
-
-* [x] **[DIPDemoJava](https://github.com/cggos/DIPDemoJava)**: Digital Image Processing Demos with OpenCV2 and Java
-
-* [x] **[DIPDemoCSharp](https://github.com/cggos/DIPDemoCSharp)**: Digital Image Processing Demos with C#
 
 * [x] **[CardDemoQt](https://github.com/cggos/CardDemoQt)**: Card Management Demo with Qt5
 
@@ -72,7 +60,7 @@ key: page-bio
 
 | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
 |---------------|--------|
-| Code          | GitHub |
+| Code          | [GitHub](https://github.com/cggos) <br/> [CodePen](https://codepen.io/cggos) |
 | Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> (most written in university, deprecated)  |
 | Presentations | [SlideShare](https://www2.slideshare.net/HongchenGao)  |
 | Videos        | [Bilibili](https://space.bilibili.com/158441969) <br/> [YouTube](https://www.youtube.com/channel/UCqcvAd87uSB4rl7fJ0nHGjA)  |
