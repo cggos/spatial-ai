@@ -30,8 +30,6 @@ show_title: false
 
   <div class="article__content" itemprop="articleBody" style="font-size: large;">
 
-    {%- include threejs-demo/box.html -%}
-
     <figure>
       <blockquote cite="https://blog.slamcore.com/spatial-ai-slam-deep-learning" style="font-size: x-large;">
         Spatial AI: Augmenting SLAM technology with deep learning
@@ -49,7 +47,7 @@ show_title: false
       In the context of Spatial AI, deep learning has most obviously had a big impact on bringing semantic meaning to geometric maps of the world.
     </p>
 
-    <p>
+    <!-- <p>
       More remarkable, at least to those of us from an estimation background, has been the emergence of learning techniques 
       which now offer promising solutions to geometrical estimation problems. Networks can be trained to predict robust 
       frame-to-frame visual odometry; dense optical flow prediction; or depth prediction from a single image. 
@@ -57,7 +55,7 @@ show_title: false
       always make predictions which are similar to real scenarios present in their training data. But designed methods 
       still often have advantages in flexibility in a range of unforeseen scenarios, and in final accuracy due to 
       the use of precise iterative optimisation.
-    </p>
+    </p> -->
 
     <p align="center">
       <img src="https://blog.slamcore.com/hs-fs/hubfs/andy-blog-image.png?width=600&name=andy-blog-image.png">
@@ -68,13 +66,15 @@ show_title: false
     </blockquote>
 
     <p align="center">
-      <img src="assets/images/spatial-ai-brain.png"/>
+      <img src="assets/images/spatial-ai-brain.png" style="width:80%"/>
     </p>
 
     <blockquote cite="https://blog.slamcore.com/spatial-ai-slam-deep-learning" style="font-size: x-large;">
       From SLAM to Spatial AI
     </blockquote>
     <div>{%- include extensions/youtube.html id='lGIM2WVp5t0' -%}</div>
+
+    {%- include threejs-demo/box.html -%}
 
     <blockquote cite="" style="font-size: x-large;">
       References
