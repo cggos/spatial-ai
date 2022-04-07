@@ -214,7 +214,12 @@ scholar:
 ## => Build
 ##############################
 markdown    : kramdown
+
 highlighter : rouge
+kramdown:
+  input: GFM  # Github Flavored Markdown
+  syntax_highlighter: rouge
+
 # permalink   : date
 permalink   : /:categories/:title.html
 
