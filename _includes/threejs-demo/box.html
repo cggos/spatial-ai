@@ -1,0 +1,53 @@
+<style>
+  .threejs {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  .threejs > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+<div class='threejs'>
+ <div id='cube'></div> 
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script>
+  var container = document.getElementById('cube');
+  var width = container.clientWidth;
+  var height = container.clientHeight;
+
+  // scene
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xffffff);
+  geometry = new THREE.BoxGeometry(1, 1, 1);
+  material = new THREE.MeshNormalMaterial();
+  mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  // camera
+  camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
+  camera.position.z = 2;
+
+  // renderer
+  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width, height);
+  container.appendChild(renderer.domElement);   
+  
+  // animation
+  function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.x += 0.005;
+    mesh.rotation.y += 0.01;
+    renderer.render(scene, camera);
+  }      
+
+  animate();
+</script>
