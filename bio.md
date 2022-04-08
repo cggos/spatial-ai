@@ -77,6 +77,7 @@ key: page-bio
 | HAM           | CallSign: **BI1NIU** |
 | IRC           | [#SpatialAI at Libera.Chat](https://web.libera.chat/#SpatialAI)  |
 | WeChat Group  | CG-SpatialAI |
+| 知识星球       | <a href="https://wx.zsxq.com/dweb2/index/group/88858588552122" target="_blank"><img src="/assets/images/logo_zsxq.png" width="210" height="66" alt="" title=""></a> |
 | Reddit        | [Spatial AI](https://www.reddit.com/r/SpatialAI/) |
 | Stack Overflow | <a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> |
 | Discord       | <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a> |
