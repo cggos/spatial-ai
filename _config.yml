@@ -17,8 +17,8 @@
 ## => Site Settings
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : "" # the base hostname & protocol for your site e.g. https://www.someone.com
+highlight_theme: tomorrow-night-bright # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+url     : "https://spatial-ai.net" # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : "" # does not include hostname
 title   : CG-SpatialAI
 description: > # this means to ignore newlines until "Language & timezone"
@@ -38,7 +38,7 @@ author:
   name      : Gavin Gao
   url       : https://cggos.github.io
   avatar    : /assets/images/avatar/ghc.jpg # path or url of avatar image (square)
-  bio       : 'CVer, SLAMer, Engineer, Coder, Traveller, Hiking <br> 要么旅行，要么读书，身体和灵魂总有一个要在路上'
+  bio       : 'CVer, SLAMer, Engineer, Coder, Traveller, Hiking, HAM <br> 要么旅行(户外)，要么读书(SpatialAI)，身体和灵魂总有一个要在路上'
   email     : cggos@outlook.com
   github    : cggos # "user_name" the last part of your profile url, e.g. https://github.com/user_name
   facebook  : gavin.gao.xyz # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
@@ -54,7 +54,7 @@ author:
   credly    : cgabc # https://www.credly.com/users/cgabc
   orcid     : 0000-0003-2841-6617 # https://orcid.org/0000-0003-2841-6617
   researchgate: Hongchen-Gao # https://www.researchgate.net/profile/Hongchen-Gao
-  reddit    : cggos # https://www.reddit.com/user/cggos
+  reddit    : # https://www.reddit.com/user/cggos
 
 
 ## => GitHub Repository (if the site is hosted by GitHub)
