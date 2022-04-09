@@ -30,17 +30,17 @@ header:
   - title: SLAMKit
     url: https://slamkit.readthedocs.io
 
+  - title: CVKit
+    url: 
+
   - title: SciKit
     url: https://cggos.github.io/scikit
+  
+  - title: HPC
+    url: 
 
   - title: DevOps
     url: https://cggos.github.io/DevOps
     
-  - title: WebDemo
-    url: /projects/homepage.html
-
   - title: CGABC
     url: https://cgabc.xyz:5002
-  
-  - title: RSSHub
-    url: https://rsshub.cgabc.xyz 

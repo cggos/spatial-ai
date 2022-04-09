@@ -55,19 +55,20 @@ key: page-bio
 
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
+* [x] [WebDemo](https://cggos.github.io/projects/homepage.html)
+
 
 ## Hub
 
 | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
 |---------------|--------|
 | Code          | [GitHub](https://github.com/cggos) <br/> [CodePen](https://codepen.io/cggos) |
-| Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> (most written in university, deprecated)  |
+| Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> |
 | Presentations | [SlideShare](https://www2.slideshare.net/HongchenGao)  |
 | Videos        | [Bilibili](https://space.bilibili.com/158441969) <br/> [YouTube](https://www.youtube.com/channel/UCqcvAd87uSB4rl7fJ0nHGjA)  |
 | 3D Models     | <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a> |
-| Docker        | [Docker Hub](https://hub.docker.com/u/cggos) |
-| ROS           |  |
-| Ubuntu PPAs   | [Launchpad](https://launchpad.net/~cggos) |
+| Packages      | [Docker Hub](https://hub.docker.com/u/cggos) <br/> [Launchpad (PPAs)](https://launchpad.net/~cggos) |
+| RSS           | [RSSHub](https://rsshub.cgabc.xyz) |
 
 
 ## Community
