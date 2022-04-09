@@ -9,7 +9,7 @@ key: image-process-fde
 
 # Overview
 
-code: https://github.com/cggos/cv_py/blob/main/fft_fde.py
+code: https://github.com/cggos/cvkit/blob/master/scripts/cv_py/fft_fde.py
 
 主要用于：
 
