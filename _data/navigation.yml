@@ -36,11 +36,5 @@ header:
   - title: SciKit
     url: https://cggos.github.io/scikit
   
-  - title: HPC
-    url: /#
-
-  - title: DevOps
-    url: https://cggos.github.io/DevOps
-    
   - title: CGABC
-    url: https://cgabc.xyz:5002
+    url: https://cgabc.xyz
