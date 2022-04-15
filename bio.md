@@ -55,8 +55,6 @@ key: page-bio
 
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
-* [x] [WebDemo](https://cggos.github.io/projects/homepage.html)
-
 
 ## Hub
 
@@ -68,7 +66,6 @@ key: page-bio
 | Videos        | [Bilibili](https://space.bilibili.com/158441969) <br/> [YouTube](https://www.youtube.com/channel/UCqcvAd87uSB4rl7fJ0nHGjA)  |
 | 3D Models     | <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a> |
 | Packages      | [Docker Hub](https://hub.docker.com/u/cggos) <br/> [Launchpad (PPAs)](https://launchpad.net/~cggos) |
-| RSS           | [RSSHub](https://rsshub.cgabc.xyz) |
 
 
 ## Community

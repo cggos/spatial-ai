@@ -28,13 +28,13 @@ header:
     url: /archive.html
 
   - title: SLAMKit
-    url: https://slamkit.readthedocs.io
+    url: https://github.com/cggos/slamkit
 
   - title: CVKit
-    url: /#
+    url: https://github.com/cggos/cvkit
 
   - title: SciKit
-    url: https://cggos.github.io/scikit
+    url: https://github.com/cggos/SciKit
   
   - title: CGABC
     url: https://cgabc.xyz
