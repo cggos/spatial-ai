@@ -60,32 +60,20 @@ key: page-bio
 
 | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
 |---------------|--------|
-| Code          | [GitHub](https://github.com/cggos) <br/> [CodePen](https://codepen.io/cggos) |
 | Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> |
 | Presentations | [SlideShare](https://www2.slideshare.net/HongchenGao)  |
-| Videos        | [Bilibili](https://space.bilibili.com/158441969) <br/> [YouTube](https://www.youtube.com/channel/UCqcvAd87uSB4rl7fJ0nHGjA)  |
 | 3D Models     | <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a> |
-| Packages      | [Docker Hub](https://hub.docker.com/u/cggos) <br/> [Launchpad (PPAs)](https://launchpad.net/~cggos) |
 
 
 ## Community
 
 | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
 |---------------|--------|
-| HAM           | CallSign: **BI1NIU** |
-| IRC           | [#SpatialAI at Libera.Chat](https://web.libera.chat/#SpatialAI)  |
 | WeChat Group  | CG-SpatialAI |
 | 知识星球       | <a href="https://wx.zsxq.com/dweb2/index/group/88858588552122" target="_blank"><img src="/assets/images/logo_zsxq.png" width="210" height="66" alt="" title=""></a> |
 | Reddit        | [Spatial AI](https://www.reddit.com/r/SpatialAI/) |
-| Stack Overflow | <a href="https://stackoverflow.com/users/6560660/gavin-gao" target="_blank"><img src="https://stackoverflow.com/users/flair/6560660.png" width="208" height="58" alt="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Gavin Gao at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a> |
 | Discord       | <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a> |
 | Slack         | [CG-SpatialAI](https://spatial-ai-3d.slack.com) <br/> [CG-Metaverse](https://metaverse-ai.slack.com) |
-| Trello        | [Boards](https://trello.com/cggos/boards) |
-
-
-## Books
-
-* [ ] TODO
 
 
 ## Buy Me a Coffee
