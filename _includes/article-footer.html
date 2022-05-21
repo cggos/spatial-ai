@@ -32,6 +32,8 @@
     <meta itemprop="dateModified" content="{{ page.date | date_to_xmlschema }}">
   {%- endif -%}
 
+  {%- include article/footer/custom.html -%}
+
   {%- if _show_author_profile -%}
     {%- if page.author -%}
       {%- assign _author = site.data.authors[page.author] -%}
