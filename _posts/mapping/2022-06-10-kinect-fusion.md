@@ -67,6 +67,10 @@ KinectFusion 算法采用 **frame-to-model** （通过当前帧深度图像转�
 
 # Volumetric Integration (TSDF)
 
+<p align="center">
+  <img src="../images/map/tsdf_alg.png">
+</p>
+
 # Surface Reconstruction (Raycast TSDF)
 
 更新完TSDF值之后，就可以用TSDF来估计 **voxel/normal map**。这样估计出来的voxel/normal map比直接用RGBD相机得到的深度图有更少的噪音，更少的孔洞（RGBD相机会有一些无效的数据，点云上表现出来的就是黑色的孔洞）。估计出的voxel/normal map与新一帧的测量值一起可以估算相机的位置姿态。
