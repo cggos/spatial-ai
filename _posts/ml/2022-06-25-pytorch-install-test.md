@@ -49,14 +49,38 @@ pip uninstall torchvision
 
 * Dowload the prebuilt libs
 
+  ```cmake
+  set(CMAKE_PREFIX_PATH "<path>/libtorch/share/cmake/Torch")
+  ```
+
 * Build from Source
 
   ```sh
+  # example
+  git clone --recursive -b v1.0.1 https://github.com/pytorch/pytorch
+
   cd pytorch
   mkdir build
   cd build
+
+  # options
+  export NO_CUDA=1
       
   python ../tools/build_libtorch.py
+  ```
+
+  The built libtorch library is located at `pytorch/torch/lib/tmp_install/` in default.
+
+  ```cmake
+  set(Torch_DIR "<path>/pytorch/torch/lib/tmp_install/share/cmake/Torch/")
+  ```
+
+* use with cmake
+
+  ```cmake
+  find_package(Torch REQUIRED)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
+  target_link_libraries(<target> ${TORCH_LIBRARIES})
   ```
 
 # PyTorch 模型文件
