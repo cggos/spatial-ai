@@ -83,6 +83,14 @@ pip uninstall torchvision
   target_link_libraries(<target> ${TORCH_LIBRARIES})
   ```
 
+* include dir
+
+  ```sh
+  libtorch/include
+  libtorch/include/torch/csrc/api/include
+  ```
+
+
 # PyTorch 模型文件
 
 - PyTorch的模型文件一般会保存为 **.pth** 文件，C++接口一般读取的是 **.pt** 文件
