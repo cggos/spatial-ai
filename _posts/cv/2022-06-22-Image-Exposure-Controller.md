@@ -6,7 +6,10 @@ tags: ComputerVision 3A
 key: cv-image-exposure-controller
 ---
 
-* ref: [https://github.com/KumarRobotics/msckf_vio/issues/41#issuecomment-398810737](https://github.com/KumarRobotics/msckf_vio/issues/41#issuecomment-398810737)
+* ref
+  - [https://github.com/KumarRobotics/msckf_vio/issues/41#issuecomment-398810737](https://github.com/KumarRobotics/msckf_vio/issues/41#issuecomment-398810737)
+
+  - [vo-autoexpose](https://github.com/MIT-Bilab/vo-autoexpose): An auto-exposure algorithm for maxing out VO performance in challenging light conditions
 
 * code: https://github.com/cggos/ccv/blob/master/apps/camkit/rs_cam/py/rs_app.py
 
