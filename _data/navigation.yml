@@ -30,11 +30,11 @@ header:
   - title: SLAMKit
     url: https://github.com/cggos/slamkit
 
-  - title: CVKit
-    url: https://github.com/cggos/cvkit
+  - title: CCV
+    url: https://github.com/cggos/ccv
 
   - title: SciKit
-    url: https://github.com/cggos/SciKit
+    url: https://sci.cgabc.xyz/
   
   - title: CGABC
     url: https://cgabc.xyz
