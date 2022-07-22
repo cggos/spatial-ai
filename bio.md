@@ -56,26 +56,6 @@ key: page-bio
 * [x] **[multi_agent_visual_tracking](https://github.com/cggos/multi_agent_visual_tracking)**: based on the CamShift visual tracking and Image Stitching algorithms on the platform of MultiAgent Control
 
 
-## Hub
-
-| &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
-|---------------|--------|
-| Blog          | <a href="https://blog.csdn.net/u011178262"><img src="assets/images/logo_csdn.png" style="width:1em;margin-right:.5em;" alt="CSDN icon">CSDN</a> <br/> <a href="https://www.cnblogs.com/gaohongchen01"><img src="assets/images/logo_cnblogs.jpg" style="width:1em;margin-right:.5em;" alt="cnblogs icon">博客园</a> |
-| Presentations | [SlideShare](https://www2.slideshare.net/HongchenGao)  |
-| 3D Models     | <a href="https://sketchfab.com/cggos"><img src="assets/images/logo_sketchfab.png" style="width:1em;margin-right:.5em;" alt="cnblogs icon">Sketchfab</a> |
-
-
-## Community
-
-| &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; |
-|---------------|--------|
-| WeChat Group  | CG-SpatialAI |
-| 知识星球       | <a href="https://wx.zsxq.com/dweb2/index/group/88858588552122" target="_blank"><img src="/assets/images/logo_zsxq.png" width="210" height="66" alt="" title=""></a> |
-| Reddit        | [Spatial AI](https://www.reddit.com/r/SpatialAI/) |
-| Discord       | <a href="https://discord.gg/b9MZwBrRsu" target="_blank"><img src="https://styles.redditmedia.com/t5_5fmgdw/styles/image_widget_4hcglv93lvp81.jpg" width="208" height="58" alt="" title=""></a> |
-| Slack         | [CG-SpatialAI](https://spatial-ai-3d.slack.com) <br/> [CG-Metaverse](https://metaverse-ai.slack.com) |
-
-
 ## Buy Me a Coffee
 
 * 磁盘扩容
